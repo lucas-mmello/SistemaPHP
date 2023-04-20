@@ -3,8 +3,8 @@
   --second-bg-color: #333333; /* um tom de cinza médio para o fundo secundário */
   --text-color: #cccccc; /* um tom de cinza claro para o texto */
   --text-color-secondary: #aaaaaa; /* um tom de cinza mais claro para o texto secundário */
-  --main-color: #4b0082; /* um tom de roxo brilhante para a cor principal */
-  --second-color: #9400d3; /* um tom mais claro de roxo para uma cor secundária */
+  --main-color: #2ecc71; /* um tom de verde brilhante para a cor principal */
+  --second-color: #27ae60; /* um tom mais claro de verde para uma cor secundária */
 }
 
 * {
@@ -107,7 +107,7 @@ form .form-group {
 .form-group input:hover,
 .form-group input:focus {
   background-color: var(--second-color);
-  color: var(--text-color-secondary);
+  color: var(--bg-color);
 }
 
 @media (max-width: 790px) {
