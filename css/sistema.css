@@ -7,6 +7,15 @@
   --second-color: #9400d3; /* um tom mais claro de roxo para uma cor secundária */
 }
 
+:root.light {
+  --bg-color: #ffffff; /* um branco puro para o fundo principal */
+  --second-bg-color: #f2f2f2; /* um tom de cinza claro para o fundo secundário */
+  --text-color: #333333; /* um tom de cinza escuro para o texto */
+  --text-color-secondary: #555555; /* um tom de cinza mais claro para o texto secundário */
+  --main-color: #007acc; /* um tom de azul brilhante para a cor principal */
+  --second-color: #55a7e6; /* um tom mais claro de azul para uma cor secundária */
+}
+
 * {
   margin: 0;
   padding: 0;

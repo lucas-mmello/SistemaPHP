@@ -3,6 +3,7 @@
     <!-- Menu lateral -->
     <div class="sidebar">
       <nav>
+        <a href="" id="theme-toggle" class="nav-link">Mudar Tema</a>
         <a href="welcomepage.php" class="nav-link">Página Inicial</a>
         <a href="" class="nav-link">Administração de alunos</a>
         <a href="" class="nav-link">Administração de acessos</a>
