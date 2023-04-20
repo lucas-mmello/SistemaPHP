@@ -1,0 +1,127 @@
+:root {
+  --bg-color: #1c1c1c; /* um tom de preto escuro para o fundo principal */
+  --second-bg-color: #333333; /* um tom de cinza médio para o fundo secundário */
+  --text-color: #cccccc; /* um tom de cinza claro para o texto */
+  --text-color-secondary: #aaaaaa; /* um tom de cinza mais claro para o texto secundário */
+  --main-color: #4b0082; /* um tom de roxo brilhante para a cor principal */
+  --second-color: #9400d3; /* um tom mais claro de roxo para uma cor secundária */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  color: var(--bg-color);
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.title-container {
+  background-color: var(--second-bg-color);
+}
+
+.title {
+  margin: 4rem auto;
+}
+.title h1 {
+  font-size: 3rem;
+  animation: title 3s ease-in-out infinite;
+}
+
+@keyframes title {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0px 0px 1px var(--text-color-secondary));
+  }
+  50% {
+    transform: translateY(-0.5rem);
+    filter: drop-shadow(0px 0px 5px var(--text-color-secondary));
+  }
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0px 0px 1px var(--text-color-secondary));
+  }
+}
+
+form {
+  background-color: var(--second-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 1rem auto;
+  border: 1px solid black;
+  padding: 2rem;
+  flex-direction: column;
+  animation: shadow 3s ease-in-out infinite;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0px 0px 2px var(--text-color-secondary);
+  }
+  50% {
+    box-shadow: 0px 0px 7px var(--text-color-secondary);
+  }
+  100% {
+    box-shadow: 0px 0px 2px var(--text-color-secondary);
+  }
+}
+
+form .form-group {
+  width: 50%;
+}
+
+.form-group label {
+  font-size: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 5px var(--second-color);
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.btn:hover,
+.form-group input:hover,
+.form-group input:focus {
+  background-color: var(--second-color);
+  color: var(--text-color-secondary);
+}
+
+@media (max-width: 790px) {
+  .title h1 {
+    font-size: 2.6rem;
+  }
+  .form-group label {
+    font-size: 1.2rem;
+  }
+  .form-group input {
+    height: 30px;
+  }
+  .btn {
+    cursor: pointer;
+    font-size: 1rem;
+  }
+}
