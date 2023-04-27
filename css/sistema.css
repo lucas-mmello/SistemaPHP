@@ -73,3 +73,61 @@ body {
   width: 80%;
   overflow-y: auto;
 }
+
+table {
+  margin: 2rem auto;
+  border: none;
+}
+
+th,
+td {
+  padding: 1.3rem 8rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--main-color);
+}
+
+td {
+  background-color: var(--second-color);
+}
+
+.center {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin-top: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  background: var(--second-color);
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+  width: 7rem;
+  text-align: center;
+}
+
+.btn:hover {
+  box-shadow: none;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: var(--second-bg-color);
+  border-radius: 0.8rem;
+  margin: 0.7rem;
+  box-shadow: 0 0 0.5rem var(--main-color);
+  width: 45%;
+  border: 1px solid var(--main-color);
+}
