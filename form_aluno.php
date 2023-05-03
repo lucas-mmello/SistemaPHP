@@ -68,14 +68,16 @@ revalidarLogin();
             ?>
         </div>
         <div class="center">
-            <hr>
 
             <h3>Incluir Aluno</h3>
 
-            <form action="form_aluno.php" method="POST">
-                <input type="text" name="nmAluno" value="" maxlength="150" />
-                <input type="submit" value="Incluir" name="comando" class="btn">
-            </form>
+            <div>
+                <form action="form_aluno.php" method="POST">
+                    <input type="text" name="nmAluno" value="" maxlength="150" />
+                    <input type="submit" value="Incluir" name="comando" class="btn">
+                </form>
+            </div>
+            
 
             <?php
 
