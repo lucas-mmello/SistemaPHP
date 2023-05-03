@@ -4,7 +4,7 @@
     <div class="sidebar">
 
       <nav >
-        <a href="" class="theme-toggle" class="nav-link">Mudar Tema</a>
+        <a href="" class="theme-toggle nav-link">Mudar Tema</a>
         <a href="welcomepage.php" class="nav-link">Página Inicial</a>
         <a href="form_aluno.php" class="nav-link">Administração de alunos</a>
         <a href="" class="nav-link">Administração de logins</a>
