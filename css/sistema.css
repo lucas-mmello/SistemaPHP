@@ -181,7 +181,8 @@ td {
   box-shadow: none;
 }
 
-input {
+input,
+select {
   padding: 0.5rem;
   font-size: 1.6rem;
   color: var(--text-color);

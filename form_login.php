@@ -33,21 +33,28 @@ require_once("header.php");
             </div>
             
                 <hr>
-                <form action="form_login.php" method="POST">
-                   LOGIN: <input name="dslogin" type="text" maxlenght="29">
-                   <br>
-                   SENHA: <input name="dssenha" type="password" maxlenght="20">
-                    <select name="idaluno" id="">
-                        <?php
-                            $registros = listarAlunosNaoRelacionados();
+                <div class="center">
+                    <div></div>
+                    <form action="form_login.php" method="POST">
+                        <div>
+                            LOGIN: <input name="dslogin" type="text" maxlenght="29">
+                            <br>
+                            SENHA: <input name="dssenha" type="password" maxlenght="20">
+                        </div>
+                    
+                        <select name="idaluno" id="">
+                            <?php
+                                $registros = listarAlunosNaoRelacionados();
 
-                            foreach($registros as $linha){
-                                echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
-                            }
-                        ?>
-                    </select>
-                    <input type="submit" name="comando" value="Enviar">
-                </form>
+                                foreach($registros as $linha){
+                                    echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <input type="submit" name="comando" value="Enviar" class="btn">
+                    </form>
+                </div>
+                
             <?php
                 if(isset($_POST['comando']) && ($_POST['comando'] == "Cadastrar"))
                 echo "blablabla insira o codigo aq";
