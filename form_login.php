@@ -33,13 +33,14 @@ require_once("header.php");
                 </table>
             </div>
             
-                <hr>
+                
                 <div class="center">
                     <div></div>
                     <form action="form_login.php" method="POST">
                         <div>
-                            LOGIN: <input name="dslogin" type="text" maxlenght="29">
-                            <br>
+                            LOGIN:  <input name="dslogin" type="text" maxlenght="29">
+                        </div>
+                        <div>
                             SENHA: <input name="dssenha" type="password" maxlenght="20">
                         </div>
                     
