@@ -11,7 +11,7 @@
         <a href="" class="nav-link">Administração de materias</a>
         <a href="" class="nav-link">Lançamento de Notas</a>
         <a href="" class="nav-link">Relatório de notas</a>
-        <a href="" class="nav-link">Sair</a>
+        <a href="proc.sessiondestroy.php" class="nav-link">Sair</a>
       </nav>
     </div>
     <header class="header">
@@ -28,7 +28,7 @@
         <a href="" class="nav-link">Administração de materias</a>
         <a href="" class="nav-link">Lançamento de Notas</a>
         <a href="" class="nav-link">Relatório de notas</a>
-        <a href="" class="nav-link">Sair</a>
+        <a href="proc.sessiondestroy.php" class="nav-link">Sair</a>
       </nav>
     </header>
     <!-- Parte principal -->

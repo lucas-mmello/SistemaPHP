@@ -11,7 +11,7 @@ revalidarLogin();
     <div class="content">
         <h2 class="center">Manutenção de aluno</h2>
         <div>
-            <table>
+            <table class="floating-table">
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
