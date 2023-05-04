@@ -137,6 +137,15 @@ table {
   max-width: 1000px;
   overflow-x: scroll;
   table-layout: fixed;
+  scrollbar-color: var(--main-color) var(--bg-color);
+}
+
+.table::-webkit-scrollbar {
+  height: 0.6rem;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
 }
 
 th,

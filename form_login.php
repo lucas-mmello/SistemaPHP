@@ -10,10 +10,10 @@ require_once("header.php");
             <div class="table">
             <table >
                 <tr>
-                    <td>dslogin</td>
-                    <td>dssenha</td>
-                    <td>idaluno</td>
-                    <td>nmaluno</td>
+                    <th>dslogin</th>
+                    <th>dssenha</th>
+                    <th>idaluno</th>
+                    <th>nmaluno</th>
                 </tr>
                 <?php 
                 
