@@ -228,10 +228,6 @@ function excluirAluno($idaluno)
 
     return (mysqli_affected_rows($con) == 1);
 }
-
-
-
-
 function incluirAluno($nmaluno)
 {
     global $user, $password, $database, $hostname;
@@ -250,4 +246,46 @@ function incluirAluno($nmaluno)
     $resultado = mysqli_query($con, $sql);
 
     return (mysqli_affected_rows($con) == 1);
+}
+function listarLogins()
+{
+    $sqlListagem = ' SELECT *' .
+                    ' FROM login l' .
+                    ' left outer join aluno a' .
+                    ' on l.idaluno = a.idaluno';
+
+                    global $user, $password, $database, $hostname;
+                
+                $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+                if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+                    # Seleciona o banco de dados 
+                mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+                
+                $resultado = mysqli_query($con, $sqlListagem);
+            
+                $registros = mysqli_num_rows($resultado);
+                
+                $rows = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+                return $rows;          
+}
+function listarAlunosNaoRelacionados() 
+{
+    $sqlNaoUtilizados = 'select * ' . 
+        ' from aluno a ' . 
+        ' where a.idaluno not in (select l.idaluno from login l where l.idaluno = a.idaluno)';
+    
+        global $user, $password, $database, $hostname;
+                
+        $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+        if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+            # Seleciona o banco de dados 
+        mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+        
+        $resultado = mysqli_query($con, $sqlNaoUtilizados);
+    
+        $registros = mysqli_num_rows($resultado);
+        
+        $rows = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+        
+        return $rows;     
 }
