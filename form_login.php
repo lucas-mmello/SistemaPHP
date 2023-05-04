@@ -6,8 +6,9 @@ require_once("header.php");
 
 <body>
 <?php require_once("page.php") ?>
-        <div class="content">
-            <table>
+        <div class="content ">
+            <div class="table">
+            <table >
                 <tr>
                     <td>dslogin</td>
                     <td>dssenha</td>
@@ -29,6 +30,8 @@ require_once("header.php");
                 }
                 ?>
                 </table>
+            </div>
+            
                 <hr>
                 <form action="form_login.php" method="POST">
                    LOGIN: <input name="dslogin" type="text" maxlenght="29">
