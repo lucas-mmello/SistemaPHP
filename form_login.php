@@ -35,24 +35,25 @@ require_once("header.php");
             
                 
                 <div class="center">
-                    <div></div>
                     <form action="form_login.php" method="POST">
                         <div>
-                            LOGIN:  <input name="dslogin" type="text" maxlenght="29">
+                              <input name="dslogin" type="text" maxlenght="29" placeholder="LOGIN...">
                         </div>
                         <div>
-                            SENHA: <input name="dssenha" type="password" maxlenght="20">
+                              <input name="dssenha" type="password" maxlenght="20" placeholder="SENHA...">
                         </div>
-                    
-                        <select name="idaluno" id="">
-                            <?php
-                                $registros = listarAlunosNaoRelacionados();
+                        <div>
+                            <select name="idaluno" id="">
+                                <?php
+                                    $registros = listarAlunosNaoRelacionados();
 
-                                foreach($registros as $linha){
-                                    echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
-                                }
-                            ?>
-                        </select>
+                                    foreach($registros as $linha){
+                                        echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        
                         <input type="submit" name="comando" value="Enviar" class="btn">
                     </form>
                 </div>

@@ -73,7 +73,7 @@ revalidarLogin();
 
             <div>
                 <form action="form_aluno.php" method="POST">
-                    <input type="text" name="nmAluno" value="" maxlength="150" />
+                    <input type="text" name="nmAluno" value="" maxlength="150" placeholder="NOME..." />
                     <input type="submit" value="Incluir" name="comando" class="btn">
                 </form>
             </div>
