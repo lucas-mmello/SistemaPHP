@@ -7,6 +7,7 @@ require_once("header.php");
 <body>
 <?php require_once("page.php") ?>
         <div class="content ">
+            <h2 class="center">Manutenção de logins</h2>
             <div class="table">
             <table >
                 <tr>

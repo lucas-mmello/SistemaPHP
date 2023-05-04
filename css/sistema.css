@@ -134,6 +134,7 @@ table {
 }
 
 .table {
+  margin: 0 auto;
   max-width: 1000px;
   overflow-x: scroll;
   table-layout: fixed;
