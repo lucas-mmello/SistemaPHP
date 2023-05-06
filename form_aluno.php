@@ -10,7 +10,7 @@ revalidarLogin();
 
     <div class="content">
         <h2 class="center">Manutenção de aluno</h2>
-        <div>
+        <div class="table">
             <table class="floating-table">
                 <tr>
                     <th>Código</th>
