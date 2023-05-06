@@ -9,7 +9,7 @@ require_once("header.php");
         <div class="content ">
             <h2 class="center">Manutenção de logins</h2>
             <div class="table">
-            <table >
+            <table class="glowing-table">
                 <tr>
                     <th>dslogin</th>
                     <th>dssenha</th>
