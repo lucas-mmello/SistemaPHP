@@ -12,6 +12,9 @@ revalidarLogin();
     <div class="content">
         <h2 class="center">Página inicial. Bem vindo!</h2>
         <p class="center">Escolha uma opção no menu a esquerda</p>
+        <div class="img">
+            <img src="./images/welcome.gif" class="welcome">
+        </div>
     </div>
 
     <?php require_once("footer.php") ?>
