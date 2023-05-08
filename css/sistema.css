@@ -164,6 +164,10 @@ body {
   overflow-y: auto;
 }
 
+span {
+  color: var(--main-color);
+}
+
 table {
   margin: 2px auto;
   border: none;

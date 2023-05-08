@@ -7,7 +7,9 @@ require_once("header.php");
 <body>
 <?php require_once("page.php") ?>
         <div class="content ">
-            <h2 class="center">Manutenção de logins</h2>
+        <div class="center">
+            <h2 ><span class="multiple-text"></span></h2>
+        </div>
             <div class="table">
             <table class="glowing-table">
                 <tr>
@@ -64,9 +66,24 @@ require_once("header.php");
 
             ?>
         </div>
-    <?php require_once("footer.php") 
+        <?php require_once("footer.php") 
     
 ?>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const element = document.querySelector(".multiple-text");
+            if (element) {
+                const typed = new window.Typed(element, {
+                    strings: ["Manutenção de Logins."],
+                    typeSpeed: 100,
+                    backSpeed: 100,
+                    backDelay: 1000,
+                    loop: true,
+                });
+            }
+        });
+    </script>
+    
 </body>
 
     
