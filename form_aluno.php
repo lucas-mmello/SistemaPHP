@@ -97,7 +97,7 @@ revalidarLogin();
                     strings: ["Manutenção de Aluno"],
                     typeSpeed: 100,
                     backSpeed: 100,
-                    backDelay: 1000,
+                    backDelay: 5000,
                     loop: true,
                 });
             }

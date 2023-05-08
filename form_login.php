@@ -77,7 +77,7 @@ require_once("header.php");
                     strings: ["Manutenção de Logins."],
                     typeSpeed: 100,
                     backSpeed: 100,
-                    backDelay: 1000,
+                    backDelay: 5000,
                     loop: true,
                 });
             }

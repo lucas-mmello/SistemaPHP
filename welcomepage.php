@@ -25,10 +25,10 @@ revalidarLogin();
             const element = document.querySelector(".multiple-text");
             if (element) {
                 const typed = new window.Typed(element, {
-                    strings: ["Página Inicial.", "Bem vindo!"],
+                    strings: ["Página Inicial.", "Bem-vindo!"],
                     typeSpeed: 100,
                     backSpeed: 100,
-                    backDelay: 1000,
+                    backDelay: 2000,
                     loop: true,
                 });
             }
