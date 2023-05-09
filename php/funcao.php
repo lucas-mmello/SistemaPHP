@@ -289,3 +289,114 @@ function listarAlunosNaoRelacionados()
         
         return $rows;     
 }
+
+
+
+function listarDisciplinas()
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlDisciplinas =   " SELECT * " .
+        " FROM disciplina ";
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sqlDisciplinas);
+
+    $registros = mysqli_num_rows($resultado);
+
+    $rows = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+
+    return $rows;
+}
+
+function listarDisciplina($iddisciplina)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlDisciplina =   " SELECT * " .
+        " FROM disciplina 
+          WHERE iddisciplina = @iddisciplina
+        ";
+    $sql = str_replace("@iddisciplina", $iddisciplina, $sqlDisciplina);
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    $registros = mysqli_num_rows($resultado);
+
+    $rows = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+
+    return $rows;
+}
+
+function alterarDisciplina($iddisciplina, $dsdisciplina)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlUpDisciplina = "update disciplina
+                     set dsdisciplina = '@dsdisciplina'
+                   where iddisciplina = @iddisciplina";
+
+    $sql = str_replace("@iddisciplina", $iddisciplina, $sqlUpDisciplina);
+    $sql = str_replace("@dsdisciplina", $dsdisciplina, $sql);
+
+    echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
+
+function excluirDisciplina($iddisciplina)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlDelDisciplina = "delete from disciplina
+                   where iddisciplina = @iddisciplina";
+
+    $sql = str_replace("@iddisciplina", $iddisciplina, $sqlDelDisciplina);
+
+    echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
+
+function incluirDisciplina($dsdisciplina)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlInsDisciplina = "insert into disciplina(dsdisciplina) values ('@dsdisciplina')";
+
+    $sql = str_replace("@dsdisciplina", $dsdisciplina, $sqlInsDisciplina);
+
+    echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}

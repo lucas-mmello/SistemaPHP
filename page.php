@@ -8,7 +8,7 @@
         <a href="welcomepage.php" class="nav-link">Página Inicial</a>
         <a href="form_aluno.php" class="nav-link">Administração de alunos</a>
         <a href="form_login.php" class="nav-link">Administração de logins</a>
-        <a href="" class="nav-link">Administração de materias</a>
+        <a href="form_disciplina.php" class="nav-link">Administração de materias</a>
         <a href="" class="nav-link">Lançamento de Notas</a>
         <a href="" class="nav-link">Relatório de notas</a>
         <a href="proc.sessiondestroy.php" class="nav-link">Sair</a>
@@ -25,7 +25,7 @@
         <a href="welcomepage.php" class="nav-link">Página Inicial</a>
         <a href="form_aluno.php" class="nav-link">Administração de alunos</a>
         <a href="form_login.php" class="nav-link">Administração de logins</a>
-        <a href="" class="nav-link">Administração de materias</a>
+        <a href="form_disciplina.php" class="nav-link">Administração de materias</a>
         <a href="" class="nav-link">Lançamento de Notas</a>
         <a href="" class="nav-link">Relatório de notas</a>
         <a href="proc.sessiondestroy.php" class="nav-link">Sair</a>
