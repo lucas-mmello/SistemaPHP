@@ -13,10 +13,10 @@ require_once("header.php");
             <div class="table">
             <table class="glowing-table">
                 <tr>
-                    <th>dslogin</th>
-                    <th>dssenha</th>
-                    <th>idaluno</th>
-                    <th>nmaluno</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Código Aluno</th>
+                    <th>Nome</th>
                 </tr>
                 <?php 
                 
