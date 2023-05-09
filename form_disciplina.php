@@ -51,16 +51,16 @@ revalidarLogin();
             
             if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                 echo "Comandos para alterar a disciplina ";
-                alterarAluno($_POST['iddisciplina'], $_POST['dsdisciplina']);
+                alterarDisciplina($_POST['iddisciplina'], $_POST['dsdisciplina']);
                 header("location:form_disciplina.php?comando=alteracaook");
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                 echo "Comandos para excluir a disciplina";
-                excluirAluno($_POST['iddisciplina']);
+                excluirDisciplina($_POST['iddisciplina']);
                 header("location:form_disciplina.php?comando=excluirok");
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Incluir') {
                 echo "Comandos para incluir a disciplina";
                 if (trim($_POST['dsdisciplina']) != '') {
-                    incluirAluno(htmlspecialchars($_POST['dsdisciplina']));
+                    incluirDisciplina(htmlspecialchars($_POST['dsdisciplina']));
                     header("location:form_disciplina.php?comando=incluirok");
                 }
             }
