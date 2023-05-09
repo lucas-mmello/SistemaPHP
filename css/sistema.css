@@ -253,6 +253,12 @@ input::placeholder {
   font-size: 1rem;
 }
 
+@media (max-width: 1180px) {
+  .sidebar .nav-link {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 900px) {
   .sidebar {
     display: none;
