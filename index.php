@@ -21,12 +21,15 @@
           <input type="text" name="dslogin" id="usuario" />
 
           <label for="senha">Senha</label>
+          <ion-icon name="eye-outline" id="togglePassword"></ion-icon>
           <input type="password" name="dssenha" id="senha" />
           <input type="submit" value="Acessar" class="btn" />
         </div>
         
       </form>
     </section>
-    <script src='./js/index.js'></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
