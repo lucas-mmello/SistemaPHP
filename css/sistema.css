@@ -94,6 +94,18 @@ body {
 #sidebar-toggle {
   float: right;
   margin-right: 0.7rem;
+  cursor: pointer;
+  border: 1px solid var(--main-color);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+#sidebar-toggle:hover {
+  border: 1px solid var(--main-color);
+  padding: 5px;
+  border-radius: 50%;
+  background-color: var(--second-color);
+  box-shadow: 0px 0px 0.3rem var(--main-color);
 }
 
 .sidebar nav a > .ion {
