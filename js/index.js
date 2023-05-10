@@ -1,9 +1,13 @@
 // tema selecionado
 const root = document.documentElement;
 document.addEventListener("DOMContentLoaded", () => {
-  const theme = sessionStorage.getItem("theme");
+  const theme = localStorage.getItem("theme");
+  const side = localStorage.getItem("sidebar");
   if (theme === "light") {
     root.classList.add("light");
+  }
+  if (side === "small") {
+    sidebar.classList.add("collapsed");
   }
 });
 // Altera os temas claro e escuro e as imagens
@@ -15,9 +19,9 @@ themeToggle.forEach((themeToggle) => {
     e.preventDefault();
     root.classList.toggle("light");
     if (root.classList.contains("light")) {
-      sessionStorage.setItem("theme", "light");
+      localStorage.setItem("theme", "light");
     } else {
-      sessionStorage.setItem("theme", "dark");
+      localStorage.setItem("theme", "dark");
     }
   });
 });
@@ -29,6 +33,11 @@ const sidebarToggle = document.querySelector("#sidebar-toggle");
 
 sidebarToggle.addEventListener("click", () => {
   sidebar.classList.toggle("collapsed");
+  if (sidebar.classList.contains("collapsed")) {
+    localStorage.setItem("sidebar", "small");
+  } else {
+    localStorage.setItem("sidebar", "big");
+  }
 });
 
 //icone menu
