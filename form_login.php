@@ -25,7 +25,7 @@ require_once("header.php");
                 foreach($registros as $linha)
                 {
                     echo '<tr>';
-                    echo '      <td>' . $linha['dslogin'] . '</td>';
+                    echo '      <td><a href=form_login,php?alterar=' . $linha['dslogin'] . '>' . $linha['dslogin'] . '</a> </td>';
                     echo '      <td>' . $linha['dssenha'] . '</td>';
                     echo '      <td>' . $linha['idaluno'] . '</td>';
                     echo '      <td>' . $linha['nmAluno'] . '</td>';
@@ -63,7 +63,14 @@ require_once("header.php");
             <?php
                 if(isset($_POST['comando']) && ($_POST['comando'] == "Cadastrar"))
                 echo "blablabla insira o codigo aq";
+                $dslogin = htmlspecialchars($_POST['dslogin']);
+                $dssenha = md5($_POST['dssenha']);
+                $idaluno = $_POST['idaluno'];
 
+                if(incluirLogin($dslogin, $dssenha, $idaluno)){
+                    header("location:form_login.php?");
+                }
+                
             ?>
         </div>
         <?php require_once("footer.php") 

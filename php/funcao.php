@@ -289,7 +289,27 @@ function listarAlunosNaoRelacionados()
         
         return $rows;     
 }
+function incluirLogin($dslogin, $dssenha, $idaluno)
+{
+    global $user, $password, $database, $hostname;
 
+    $sqlInsert= "insert into login(dslogin,dssenha,idaluno) values ('@dslogin','@dssenha','@idaluno')";
+
+    $sql = str_replace("@dslogin", $dslogin, $sqlInsert);
+    $sql = str_replace("@dssenha", $dssenha, $sql);
+    $sql = str_replace("@idaluno", $idaluno, $sql);
+
+    echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
 
 
 function listarDisciplinas()
