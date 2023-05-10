@@ -112,6 +112,10 @@ body {
   display: inherit;
 }
 
+.sidebar .nav-link span {
+  color: var(--text-color);
+}
+
 .sidebar.collapsed .nav-link span {
   display: none;
 }
