@@ -22,6 +22,15 @@ themeToggle.forEach((themeToggle) => {
   });
 });
 
+//sidebar
+
+const sidebar = document.querySelector(".sidebar");
+const sidebarToggle = document.querySelector("#sidebar-toggle");
+
+sidebarToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("collapsed");
+});
+
 //icone menu
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".nav");
