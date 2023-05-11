@@ -34,24 +34,27 @@ require_once("header.php");
                 ?>
                 </table>
                 </div>  
-                <?php 
-                if(isset($_GET['alterar'])){
+                <div class="center">
+                    <?php 
+                    if(isset($_GET['alterar'])){
 
-                ?>
-                <hr>
-                    AREA ADMIN 
-                <hr>
-                <form action="form_login.php" method="post">
-                    LOGIN: <input name="dslogin" type="text" maxlength="20" readonly value="<?php $_GET['alterar']?>">
-                    SENHA: <input name="dssenha" type="password" maxlength="20" value="">
-                    <?php
-                        if($_GET['alterar'] != 'admin')
-                        {
-                            echo ' <input name="comando" type="submit" value="ExcluirAcesso"/>';
-                        }
                     ?>
-                </form>
-                <?php }?>
+                    <hr>
+                        AREA ADMIN 
+                    <hr>
+                    <form action="form_login.php" method="post">
+                        LOGIN: <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
+                        SENHA: <input name="dssenha" type="password" maxlength="20" value="">
+                        <?php
+                            if($_GET['alterar'] != 'admin')
+                            {
+                                echo ' <input name="comando" type="submit" value="ExcluirAcesso"/>';
+                            }
+                        ?>
+                    </form>
+                    <?php }?>
+                </div>
+                
                 
                            
                 <div class="center"> <hr> 
