@@ -10,44 +10,57 @@ revalidarLogin();
             <h2 ><span class="multiple-text"></span></h2>
         </div>
             <div class="table">
-            <table class="glowing-table">
-                <tr>
-                    <th>Login</th>
-                    <th>Senha</th>
-                    <th>Código Aluno</th>
-                    <th>Nome</th>
-                </tr>
-                <?php 
-                
-                $registros = listarLogins();
+                <table class="glowing-table">
+                    <tr>
+                        <th>Login</th>
+                        <th>Senha</th>
+                        <th>Código Aluno</th>
+                        <th>Nome</th>
+                    </tr>
+                    <?php 
+                    
+                    $registros = listarLogins();
 
-                foreach($registros as $linha)
-                {
-                    echo '<tr>';
-                    echo '      <td><a href=form_login.php?alterar=' . $linha['dslogin'] . '>' . $linha['dslogin'] . '</a> </td>';
-                    echo '      <td>' . $linha['dssenha'] . '</td>';
-                    echo '      <td>' . $linha['idaluno'] . '</td>';
-                    echo '      <td>' . $linha['nmAluno'] . '</td>';
-                    echo '</tr>';
-                }
-                ?>
-                </table>
+                    foreach($registros as $linha)
+                    {
+                        echo '<tr>';
+                        echo '      <td><a href=form_login.php?alterar=' . $linha['dslogin'] . '>' . $linha['dslogin'] . '</a> </td>';
+                        echo '      <td>' . $linha['dssenha'] . '</td>';
+                        echo '      <td>' . $linha['idaluno'] . '</td>';
+                        echo '      <td>' . $linha['nmAluno'] . '</td>';
+                        echo '</tr>';
+                    }
+                    ?>
+                    </table>
                 </div>  
                 <div class="center">
                     <?php 
                         if(isset($_GET['alterar'])){
                     ?>
-                <form action="form_login.php" method="POST">
-                    <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
-                    <input name="dssenha" type="password" maxlength="20" value="">
-                    <?php
-                        if($_GET['alterar'] != 'admin')
-                        {
-                            echo '<input name="comando" type="submit" value="ExcluirAcesso"/>';
-                        }
-                    ?>
-                    <input name="comando" type="submit" value="AlterarSenha">
-                </form>
+                    <h3>Alterar Senha e Excluir Login</h3>
+                    <div>
+                        <form action="form_login.php" method="POST">
+                            <div class="inp-group">
+                                <input name="dslogin" class="inp" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
+                            </div>
+                            
+                            <div class="inp-group">
+                                <ion-icon name="eye-outline" class="togglePassword"></ion-icon>
+                                <input name="dssenha" type="password" maxlength="20" value="" class="inp" placeholder="SENHA...">
+                            </div>
+                            
+                            <div class="inp-group">
+                                <?php
+                                    if($_GET['alterar'] != 'admin')
+                                    {
+                                        echo '<input name="comando" type="submit" value="Excluir" class="btn"/>';
+                                    }
+                                ?>
+                                <input name="comando" type="submit" value="Alterar" class="btn">
+                            </div>
+                        </form>
+                    </div>
+                
                 <?php 
 
                 }
@@ -78,12 +91,12 @@ revalidarLogin();
                 // }
                     
 
-                if (isset($_POST['comando']) && $_POST['comando'] == 'AlterarSenha') {
+                if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                     //echo "Comandos para alterar o login ";
                     alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
                     echo "<script> window.location.href = 'form_login.php'; </script>";
                     //header("location:form_login.php?comando=alteracaorok");
-                } else if (isset($_POST['comando']) && $_POST['comando'] == 'ExcluirAcesso') {
+                } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                     //echo "Comandos para excluir o login";
                     excluirAcesso($_POST['dslogin']);
                     echo "<script> window.location.href = 'form_login.php'; </script>";
@@ -105,14 +118,15 @@ revalidarLogin();
                     <h3>Incluir Login</h3>
                     <div>
                         <form action="form_login.php" method="POST">
-                            <div>
-                                <input name="dslogin" type="text" maxlenght="29" placeholder="LOGIN...">
+                            <div class="inp-group">
+                                <input name="dslogin" class="input" type="text" maxlenght="29" placeholder="LOGIN...">
                             </div>
-                            <div>
-                                <input name="dssenha" type="password" maxlenght="20" placeholder="SENHA...">
+                            <div class="inp-group">
+                                <ion-icon name="eye-outline" class="togglePassword"></ion-icon>
+                                <input class="input" name="dssenha" type="password" maxlenght="20" placeholder="SENHA...">
                             </div>
-                            <div>
-                                <select name="idaluno" id="">
+                            <div class="inp-group">
+                                <select name="idaluno" class="input" id="">
                                     <?php
                                         $registros = listarAlunosNaoRelacionados();
 
@@ -122,8 +136,9 @@ revalidarLogin();
                                     ?>
                                 </select>
                             </div>
-                            
-                            <input type="submit" name="comando" value="Cadastrar" class="btn">
+                            <div class="inp-group">
+                                <input type="submit" name="comando" value="Cadastrar" class="btn">
+                            </div>
                         </form>
                     </div>
                     <?php

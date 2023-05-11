@@ -63,3 +63,17 @@ window.onscroll = () => {
 //     e.preventDefault();
 //   });
 // });
+
+// olho da senha
+document.querySelectorAll(".togglePassword").forEach((toggle) => {
+  toggle.addEventListener("click", (ev) => {
+    const password = ev.target.nextElementSibling;
+    if (password.type === "password") {
+      password.type = "text";
+      toggle.setAttribute("name", "eye-off-outline");
+    } else {
+      password.type = "password";
+      toggle.setAttribute("name", "eye-outline");
+    }
+  });
+});

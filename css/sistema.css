@@ -277,8 +277,29 @@ td {
   text-align: center;
 }
 
+.togglePassword {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 10rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 .btn:hover {
   box-shadow: none;
+}
+
+.inp-group {
+  display: flex;
+  justify-content: center;
+}
+
+.inp-group .inp {
+  width: 70%;
+}
+
+.inp-group .input {
+  width: 200px;
 }
 
 input,
@@ -290,7 +311,7 @@ select {
   border-radius: 0.8rem;
   margin: 0.7rem;
   box-shadow: 0 0 0.5rem var(--main-color);
-  width: 45%;
+  width: 47%;
   border: 0.15rem solid var(--main-color);
 }
 
