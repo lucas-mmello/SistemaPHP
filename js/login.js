@@ -1,7 +1,7 @@
 // tema selecionado
 const root = document.documentElement;
 document.addEventListener("DOMContentLoaded", () => {
-  const theme = sessionStorage.getItem("theme");
+  const theme = localStorage.getItem("theme");
   if (theme === "light") {
     root.classList.add("light");
   }
