@@ -50,7 +50,7 @@ revalidarLogin();
                             </div>
                             <div class="inp-group">
                               <input type="hidden" name="idavaliacao" value="<?php echo $avaliacao[0]['idavaliacao']?>"/>
-                              <input type="text" name="nota" class="inp" value="<?php echo $avaliacao[0]['nota']?>" maxlength="150"/>
+                              <input type="number" step="1" name="nota" class="inp" value="<?php echo $avaliacao[0]['nota']?>" maxlength="150"/>
                             </div>
                             <div class="inp-group">
                                 <input name="comando" type="submit" value="Excluir" class="btn"/>
@@ -105,7 +105,8 @@ revalidarLogin();
                     $idaluno = $_POST['idaluno'];
                     $iddisciplina = $_POST['iddisciplina'];
                         incluirNota($nota, $idaluno, $iddisciplina);
-                        header("location:form_nota.php?comando=incluirok");
+                        echo "<script> window.location.href = 'form_nota.php'; </script>";
+                        //header("location:form_nota.php?comando=incluirok");
                 }
                 ?>
             </div>
