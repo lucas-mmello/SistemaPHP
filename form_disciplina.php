@@ -38,13 +38,21 @@ revalidarLogin();
             if (isset($_GET['alterarid'])) {
                 $disciplina = listarDisciplina($_GET['alterarid']);
             ?>
-            <form action="form_disciplina.php" method="POST">
+            <h3>Alterar e Excluir Materia</h3>
+            <div>
+              <form action="form_disciplina.php" method="POST">
+              <div class="inp-group">
                 <input type="hidden" name="iddisciplina" value="<?php echo $disciplina[0]['iddisciplina']?>"/>
-                <input type="text" name="dsdisciplina" value="<?php echo $disciplina[0]['dsdisciplina']?>" maxlength="150"/>
+                <input type="text" class="inp" name="dsdisciplina" value="<?php echo $disciplina[0]['dsdisciplina']?>" maxlength="150"/>
+              </div>
+              <div class="inp-group">
                 <input type="submit" value="Alterar" name="comando" class="btn">
                 <input type="submit" value="Excluir" name="comando" class="btn">
-            </form>
+              </div>
+             </form>
 
+            </div>
+            
             <?php
 
             }

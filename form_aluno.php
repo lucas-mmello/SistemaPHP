@@ -38,13 +38,21 @@ revalidarLogin();
             if (isset($_GET['alterarid'])) {
                 $aluno = listarAluno($_GET['alterarid']);
             ?>
-            <form action="form_aluno.php" method="POST">
-                <input type="hidden" name="idaluno" value="<?php echo $aluno[0]['idaluno']?>"/>
-                <input type="text" name="nmAluno" value="<?php echo $aluno[0]['nmAluno']?>" maxlength="150"/>
-                <input type="submit" value="Alterar" name="comando" class="btn">
-                <input type="submit" value="Excluir" name="comando" class="btn">
-            </form>
+            <h3>Alterar e Excluir Aluno</h3>
+            <div>
+                <form action="form_aluno.php" method="POST">
+                    <div class="inp-group">
+                        <input type="hidden" name="idaluno" value="<?php echo $aluno[0]['idaluno']?>"/>
+                        <input type="text" class="inp" name="nmAluno" value="<?php echo $aluno[0]['nmAluno']?>" maxlength="150"/>
+                    </div>
+                    <div class="inp-group">
+                        <input type="submit" value="Alterar" name="comando" class="btn">
+                        <input type="submit" value="Excluir" name="comando" class="btn">
+                    </div>
+                 </form>
 
+            </div>
+            
             <?php
 
             }
