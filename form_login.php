@@ -38,23 +38,22 @@ require_once("header.php");
                     <?php 
                     if(isset($_GET['alterar'])){
 
+                ?>
+                <hr>
+                    AREA ADMIN 
+                <hr>
+                <form action="form_login.php" method="post">
+                    LOGIN: <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
+                    SENHA: <input name="dssenha" type="password" maxlength="20" value="">
+                    <?php
+                        if($_GET['alterar'] != 'admin')
+                        {
+                            echo ' <input name="comando" type="submit" value="ExcluirAcesso"/>';
+                        }
                     ?>
-                    <hr>
-                        AREA ADMIN 
-                    <hr>
-                    <form action="form_login.php" method="post">
-                        LOGIN: <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
-                        SENHA: <input name="dssenha" type="password" maxlength="20" value="">
-                        <?php
-                            if($_GET['alterar'] != 'admin')
-                            {
-                                echo ' <input name="comando" type="submit" value="ExcluirAcesso"/>';
-                            }
-                        ?>
-                    </form>
-                    <?php }?>
-                </div>
-                
+                    <input name="comando" type="submit" value="AlterarSenha">
+                </form>
+                <?php }?>
                 
                            
                 <div class="center"> <hr> 
@@ -95,13 +94,17 @@ require_once("header.php");
                         header("location:form_login.php?");
                     }
 
-                }else if(isset($_POST['comando']) && ($_POST['comando'] == "Excluir Acesso"))
+                }else if(isset($_POST['comando']) && ($_POST['comando'] == "ExcluirAcesso"))
                 {
                     echo "Estou na area de exclusão";
+                    excluirAcesso($_POST['dslogin']);
+                    header("location:form_login.php?");
                 }
-                else if(isset($_POST['comando']) && ($_POST['comando'] == "Alterar Senha"))
+                else if(isset($_POST['comando']) && ($_POST['comando'] == "AlterarSenha"))
                 {
                     echo "Estou na area de alteração";
+                    alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
+                    header("location:form_login.php?");
                 }
                 
             ?>
