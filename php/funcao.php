@@ -420,3 +420,47 @@ function incluirDisciplina($dsdisciplina)
 
     return (mysqli_affected_rows($con) == 1);
 }
+
+function alterarAcesso($dslogin, $dssenha)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlUpdate = "update login
+                     set dssenha = '@dssenha'
+                   where dslogin = '@dslogin'";
+
+    $sql = str_replace("@dslogin", $dslogin, $sqlUpdate);
+    $sql = str_replace("@dssenha", $dssenha, $sql);
+
+    echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
+
+function excluirAcesso($dslogin)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlUpdate = "delete from login
+                   where dslogin = '@dslogin'";
+
+    $sql = str_replace("@dslogin", $dslogin, $sqlUpdate);
+
+    echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
