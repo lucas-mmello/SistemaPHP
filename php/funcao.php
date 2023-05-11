@@ -299,7 +299,7 @@ function incluirLogin($dslogin, $dssenha, $idaluno)
     $sql = str_replace("@dssenha", $dssenha, $sql);
     $sql = str_replace("@idaluno", $idaluno, $sql);
 
-    echo $sql;
+    //echo $sql;
 
     $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
     if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
@@ -432,7 +432,7 @@ function alterarAcesso($dslogin, $dssenha)
     $sql = str_replace("@dslogin", $dslogin, $sqlUpdate);
     $sql = str_replace("@dssenha", $dssenha, $sql);
 
-    echo $sql;
+    //echo $sql;
 
     $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
     if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
@@ -453,7 +453,7 @@ function excluirAcesso($dslogin)
 
     $sql = str_replace("@dslogin", $dslogin, $sqlUpdate);
 
-    echo $sql;
+   // echo $sql;
 
     $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
     if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());

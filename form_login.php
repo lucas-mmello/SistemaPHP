@@ -1,9 +1,8 @@
 <?php
 require_once("./php/funcao.php");
-require_once("header.php");
-/* revalidarLogin();
- */?>
-
+require_once("./header.php");
+revalidarLogin();
+?>
 <body>
 <?php require_once("page.php") ?>
         <div class="content ">
@@ -36,82 +35,103 @@ require_once("header.php");
                 </div>  
                 <div class="center">
                     <?php 
-                    if(isset($_GET['alterar'])){
-
-                ?>
-                <hr>
-                    AREA ADMIN 
-                <hr>
-                <form action="form_login.php" method="post">
-                    LOGIN: <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
-                    SENHA: <input name="dssenha" type="password" maxlength="20" value="">
+                        if(isset($_GET['alterar'])){
+                    ?>
+                <form action="form_login.php" method="POST">
+                    <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar']?>">
+                    <input name="dssenha" type="password" maxlength="20" value="">
                     <?php
                         if($_GET['alterar'] != 'admin')
                         {
-                            echo ' <input name="comando" type="submit" value="ExcluirAcesso"/>';
+                            echo '<input name="comando" type="submit" value="ExcluirAcesso"/>';
                         }
                     ?>
                     <input name="comando" type="submit" value="AlterarSenha">
                 </form>
-                <?php }?>
-                
-                           
-                <div class="center"> <hr> 
-                AREA DE INCLUSAO DE REGISTRO <hr>
-                    <form action="form_login.php" method="POST">
-                        <div>
-                              <input name="dslogin" type="text" maxlenght="29" placeholder="LOGIN...">
-                        </div>
-                        <div>
-                              <input name="dssenha" type="password" maxlenght="20" placeholder="SENHA...">
-                        </div>
-                        <div>
-                            <select name="idaluno" id="">
-                                <?php
-                                    $registros = listarAlunosNaoRelacionados();
+                <?php 
 
-                                    foreach($registros as $linha){
-                                        echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div>
-                        
-                        <input type="submit" name="comando" value="Enviar" class="btn">
-                    </form>
-                </div>
-                
-            <?php
-                if(isset($_POST['comando']) && ($_POST['comando'] == "Cadastrar"))
-                {
-                    echo "blablabla insira o codigo aq";
+                }
+
+                // if(isset($_POST['comando']) && ($_POST['comando'] == "Cadastrar"))
+                // {
+                //     echo "blablabla insira o codigo aq";
+                //     $dslogin = htmlspecialchars($_POST['dslogin']);
+                //     $dssenha = md5($_POST['dssenha']);
+                //     $idaluno = $_POST['idaluno'];
+
+                //     if(incluirLogin($dslogin, $dssenha, $idaluno))
+                //     {
+                //         header("location:form_login.php?comando=incluirok");
+                //     }
+
+                // }else if(isset($_POST['comando']) && ($_POST['comando'] == "ExcluirAcesso"))
+                // {
+                //     // echo "Estou na area de exclusão";
+                //     excluirAcesso($_POST['dslogin']);
+                //     header("location:form_login.php?comando=excluirok");
+                // }
+                // else if(isset($_POST['comando']) && ($_POST['comando'] == "AlterarSenha"))
+                // {
+                //     // echo "Estou na area de alteração";
+                //     alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
+                //     header("location:form_login.php?comando=alteracaorok");
+                // }
+                    
+
+                if (isset($_POST['comando']) && $_POST['comando'] == 'AlterarSenha') {
+                    //echo "Comandos para alterar o login ";
+                    alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
+                    echo "<script> window.location.href = 'form_login.php'; </script>";
+                    //header("location:form_login.php?comando=alteracaorok");
+                } else if (isset($_POST['comando']) && $_POST['comando'] == 'ExcluirAcesso') {
+                    //echo "Comandos para excluir o login";
+                    excluirAcesso($_POST['dslogin']);
+                    echo "<script> window.location.href = 'form_login.php'; </script>";
+                    //header("location:form_login.php?comando=exclusaorok");
+                } else if (isset($_POST['comando']) && $_POST['comando'] == 'Cadastrar') {
+                    //echo "Comandos para incluir o login";
                     $dslogin = htmlspecialchars($_POST['dslogin']);
                     $dssenha = md5($_POST['dssenha']);
                     $idaluno = $_POST['idaluno'];
-
-                    if(incluirLogin($dslogin, $dssenha, $idaluno))
-                    {
-                        header("location:form_login.php?");
+                    if (trim($_POST['dslogin']) != '') {
+                        incluirLogin($dslogin, $dssenha, $idaluno);
+                        header("location:form_login.php?comando=incluirok");
                     }
+                }
+                ?>
+            </div>
+                           
+                <div class="center">
+                    <h3>Incluir Login</h3>
+                    <div>
+                        <form action="form_login.php" method="POST">
+                            <div>
+                                <input name="dslogin" type="text" maxlenght="29" placeholder="LOGIN...">
+                            </div>
+                            <div>
+                                <input name="dssenha" type="password" maxlenght="20" placeholder="SENHA...">
+                            </div>
+                            <div>
+                                <select name="idaluno" id="">
+                                    <?php
+                                        $registros = listarAlunosNaoRelacionados();
 
-                }else if(isset($_POST['comando']) && ($_POST['comando'] == "ExcluirAcesso"))
-                {
-                    echo "Estou na area de exclusão";
-                    excluirAcesso($_POST['dslogin']);
-                    header("location:form_login.php?");
-                }
-                else if(isset($_POST['comando']) && ($_POST['comando'] == "AlterarSenha"))
-                {
-                    echo "Estou na area de alteração";
-                    alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
-                    header("location:form_login.php?");
-                }
-                
-            ?>
+                                        foreach($registros as $linha){
+                                            echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            
+                            <input type="submit" name="comando" value="Cadastrar" class="btn">
+                        </form>
+                    </div>
+                    <?php
+
+                    ?>
+                </div>
         </div>
-        <?php require_once("footer.php") 
-    
-?>
+        <?php require_once("footer.php") ?>
         <script>
         document.addEventListener("DOMContentLoaded", function() {
             const element = document.querySelector(".multiple-text");

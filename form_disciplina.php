@@ -50,7 +50,7 @@ revalidarLogin();
             }
             
             if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
-                echo "Comandos para alterar a disciplina ";
+                echo "Comandos para alterar a disciplina";
                 alterarDisciplina($_POST['iddisciplina'], $_POST['dsdisciplina']);
                 header("location:form_disciplina.php?comando=alteracaook");
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
