@@ -284,6 +284,9 @@ td {
   font-size: 1.3rem;
   cursor: pointer;
 }
+.togglePassword:hover {
+  transform: scale(1.2);
+}
 
 .btn:hover {
   box-shadow: none;
