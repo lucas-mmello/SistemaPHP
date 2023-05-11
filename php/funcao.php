@@ -464,3 +464,116 @@ function excluirAcesso($dslogin)
 
     return (mysqli_affected_rows($con) == 1);
 }
+
+function listarAvaliacoes()
+{
+    $sqlListagem = ' SELECT *' .
+                    ' FROM avaliacao av' .
+                    ' LEFT OUTER JOIN aluno a ON av.idaluno = a.idaluno' .
+                    ' LEFT OUTER JOIN disciplina d ON av.iddisciplina = d.iddisciplina';
+
+                    global $user, $password, $database, $hostname;
+                
+                $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+                if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+                    # Seleciona o banco de dados 
+                mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+                
+                $resultado = mysqli_query($con, $sqlListagem);
+            
+                $registros = mysqli_num_rows($resultado);
+                
+                $rows = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+                return $rows;          
+}
+
+function listarAvaliacao($idavaliacao)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlAvaliacao =   " SELECT * " .
+        " FROM avaliacao av
+          LEFT JOIN aluno al ON av.idaluno = al.idaluno
+          WHERE av.idavaliacao = @idavaliacao
+        ";
+    $sql = str_replace("@idavaliacao", $idavaliacao, $sqlAvaliacao);
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    $registros = mysqli_num_rows($resultado);
+
+    $rows = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+
+    return $rows;
+}
+
+function incluirNota($nota, $idaluno, $iddisciplina)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlInsert= "insert into avaliacao(nota,idaluno,iddisciplina) values ('@nota','@idaluno','@iddisciplina')";
+
+    $sql = str_replace("@nota", $nota, $sqlInsert);
+    $sql = str_replace("@idaluno", $idaluno, $sql);
+    $sql = str_replace("@iddisciplina", $iddisciplina, $sql);
+
+    //echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
+
+function alterarNota($idavaliacao, $nota)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlUpdate = "update avaliacao
+                     set nota = '@nota'
+                   where idavaliacao = @idavaliacao";
+
+    $sql = str_replace("@idavaliacao", $idavaliacao, $sqlUpdate);
+    $sql = str_replace("@nota", $nota, $sql);
+
+    //echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}
+
+function excluirNota($idavaliacao)
+{
+    global $user, $password, $database, $hostname;
+
+    $sqlUpdate = "delete from avaliacao
+                   where idavaliacao = @idavaliacao";
+
+    $sql = str_replace("@idavaliacao", $idavaliacao, $sqlUpdate);
+
+   // echo $sql;
+
+    $con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
+    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    # Seleciona o banco de dados 
+    mysqli_select_db($con, $database) or die('Erro na seleção do banco');
+
+    $resultado = mysqli_query($con, $sql);
+
+    return (mysqli_affected_rows($con) == 1);
+}

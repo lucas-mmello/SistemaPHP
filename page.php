@@ -9,7 +9,7 @@
         <a href="form_aluno.php" class="nav-link"><ion-icon class="ion" name="school-outline"></ion-icon><span>Administração de alunos</span></a>
         <a href="form_login.php" class="nav-link"><ion-icon class="ion" name="people-outline"></ion-icon><span>Administração de logins</span></a>
         <a href="form_disciplina.php" class="nav-link"><ion-icon class="ion" name="book-outline"></ion-icon><span>Administração de materias</span></a>
-        <a href="" class="nav-link"><ion-icon class="ion" name="ribbon-outline"></ion-icon><span>Lançamento de Notas</span></a>
+        <a href="form_nota.php" class="nav-link"><ion-icon class="ion" name="ribbon-outline"></ion-icon><span>Lançamento de Notas</span></a>
         <a href="" class="nav-link"><ion-icon class="ion" name="document-text-outline"></ion-icon><span>Relatório de notas</span></a>
         <a href="proc.sessiondestroy.php" class="nav-link"><ion-icon class="ion" name="log-out-outline"></ion-icon><span>Sair</span></a>
       </nav>
@@ -26,7 +26,7 @@
         <a href="form_aluno.php" class="nav-link">Administração de alunos</a>
         <a href="form_login.php" class="nav-link">Administração de logins</a>
         <a href="form_disciplina.php" class="nav-link">Administração de materias</a>
-        <a href="" class="nav-link">Lançamento de Notas</a>
+        <a href="form_nota.php" class="nav-link">Lançamento de Notas</a>
         <a href="" class="nav-link">Relatório de notas</a>
         <a href="proc.sessiondestroy.php" class="nav-link">Sair</a>
       </nav>
