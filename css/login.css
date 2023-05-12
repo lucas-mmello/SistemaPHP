@@ -68,7 +68,7 @@ section {
   }
 }
 
-form.form {
+form {
   background-image: var(--bg-gradient);
   display: flex;
   justify-content: center;
@@ -240,8 +240,11 @@ select:-webkit-autofill {
   .title h1 {
     font-size: 2rem;
   }
+  form {
+    width: 65%;
+  }
   form .form-group {
-    width: 100%;
+    width: 70%;
     position: relative;
   }
   .form-group label {
