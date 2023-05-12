@@ -10,6 +10,11 @@
     #232526,
     #2e3e50
   ); /* um gradiente para usar na sidebar*/
+  --bg-gradient-smooth: linear-gradient(
+    to bottom,
+    #1c1c1c,
+    #333333
+  ); /* gradient para a nav */
 }
 
 :root.light {
@@ -24,6 +29,11 @@
     #f2f2f2,
     #83a1d8
   ); /* um gradiente para usar na sidebar*/
+  --bg-gradient-smooth: linear-gradient(
+    to bottom,
+    #f2f2f2,
+    #d0d0e8
+  ); /* gradient para a nav */
 }
 
 /*
@@ -396,7 +406,7 @@ input::placeholder {
     left: 0;
     width: 100%;
     padding: 1rem 3%;
-    background: var(--bg-color);
+    background: var(--bg-gradient-smooth);
     border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     display: none;
