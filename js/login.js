@@ -1,6 +1,7 @@
-// tema selecionado
+// tema selecionado e erro
 const root = document.documentElement;
 const url = window.location.href;
+
 document.addEventListener("DOMContentLoaded", () => {
   const theme = localStorage.getItem("theme");
   if (theme === "light") {
@@ -14,7 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("input").forEach((inp) => {
         inp.classList.remove("shake-horizontal");
       });
+      window.history.replaceState(null, "", url.replace(/erro.*/, ""));
     }, 1200);
+  }
+});
+
+//refresh da pagina
+window.addEventListener("beforeunload", function (event) {
+  if (url.includes("erro")) {
+    event.preventDefault();
+    window.history.replaceState(null, "", url.replace(/erro.*/, ""));
   }
 });
 
