@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("input").forEach((inp) => {
         inp.classList.remove("shake-horizontal");
       });
-      window.history.replaceState(null, "", url.replace(/erro.*/, ""));
+      window.history.replaceState(null, "", url.replace(/(\?|&)erro.*/, ""));
     }, 1200);
   }
 });
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("beforeunload", function (event) {
   if (url.includes("erro")) {
     event.preventDefault();
-    window.history.replaceState(null, "", url.replace(/erro.*/, ""));
+    window.history.replaceState(null, "", url.replace(/(\?|&)erro.*/, ""));
   }
 });
 
