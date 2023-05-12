@@ -22,7 +22,7 @@
     </section>
 
     <section>
-      <form action="./php/login.php" method="post">
+      <form action="./php/login.php" method="post" class="form">
         <div class="form-group">
           <label for="usuario">Usuário</label>
           <input type="text" name="dslogin" id="usuario" />

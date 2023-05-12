@@ -6,6 +6,7 @@
   --main-color: #2ecc71; /* um tom de verde brilhante para a cor principal */
   --second-color: #27ae60; /* um tom mais claro de verde para uma cor secundária */
   --error-color: #f03621;
+  --bg-gradient: linear-gradient(to right, #232526, #2e3e50);
 }
 
 :root.light {
@@ -16,6 +17,7 @@
   --main-color: #007acc; /* um tom de azul brilhante para a cor principal */
   --second-color: #55a7e6; /* um tom mais claro de azul para uma cor secundária */
   --error-color: #ff6347;
+  --bg-gradient: linear-gradient(to right, #ffffff, #83a1d8);
 }
 
 * {
@@ -66,8 +68,8 @@ section {
   }
 }
 
-form {
-  background-color: var(--second-bg-color);
+form.form {
+  background-image: var(--bg-gradient);
   display: flex;
   justify-content: center;
   align-items: center;
