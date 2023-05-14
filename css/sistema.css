@@ -181,41 +181,6 @@ body {
   color: var(--main-color);
 }
 
-.floating-table {
-  animation: float 4s infinite ease-in-out;
-}
-
-.glowing-table {
-  animation: glow 4s infinite ease-in-out;
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0px 0px 0.3rem var(--main-color);
-  }
-  50% {
-    box-shadow: 0px 0px 1.7rem var(--main-color);
-  }
-  100% {
-    box-shadow: 0px 0px 0.3rem var(--main-color);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-    box-shadow: 0px 0px 0.5rem var(--main-color);
-  }
-  50% {
-    transform: translate(0, 1rem);
-    box-shadow: 0px 0px 2rem var(--main-color);
-  }
-  100% {
-    transform: translate(0, 0);
-    box-shadow: 0px 0px 0.5rem var(--main-color);
-  }
-}
-
 #menu-icon {
   font-size: 2.6rem;
   color: var(--text-color);
@@ -253,7 +218,8 @@ h1 span.multiple-text {
 
 table {
   margin: 2px auto;
-  border: none;
+  border: 2px solid var(--text-color-secondary);
+  border-collapse: collapse;
 }
 
 .table {

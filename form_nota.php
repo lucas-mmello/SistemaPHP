@@ -10,7 +10,7 @@ revalidarLogin();
             <h2 ><span class="multiple-text"></span></h2>
         </div>
             <div class="table">
-                <table class="glowing-table">
+                <table >
                     <tr>
                         <th>Código</th>
                         <th>Nota</th>
@@ -160,7 +160,7 @@ revalidarLogin();
                     typeSpeed: 100,
                     backSpeed: 100,
                     backDelay: 5000,
-                    loop: true,
+                    loop: false,
                 });
             }
         });
