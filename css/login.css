@@ -8,6 +8,7 @@
   --error-color: #f03621;
   --bg-gradient: linear-gradient(to right, #1c1c1c, #1a6d54);
   --bg-transparent: #1c1c1c5b;
+  --button-gradient: linear-gradient(to right, #34ac66, #3af086);
 }
 
 :root.light {
@@ -20,6 +21,7 @@
   --error-color: #ff6347;
   --bg-gradient: linear-gradient(to right, #ffffff, #45b9f0);
   --bg-transparent: #ffffff45;
+  --button-gradient: linear-gradient(to right, #55a7e6, #0769ab);
 }
 
 * {
@@ -152,9 +154,15 @@ form .form-group {
   background-color: var(--main-color);
   box-shadow: 0px 0px 5px var(--second-color);
   color: var(--bg-color);
+  transition: 0.5s ease-in-out;
 }
 
-.btn:hover,
+.btn:hover {
+  background-image: var(--button-gradient);
+  color: var(--bg-color);
+  outline: none;
+}
+
 .form-group input:hover,
 .form-group input:focus {
   background-color: var(--second-color);
