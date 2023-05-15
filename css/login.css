@@ -51,11 +51,12 @@ form {
   width: 500px;
   background: var();
   margin: auto auto;
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
+  box-shadow: 0px 0px 10px 1px var(--text-color);
   border-radius: 5px;
   padding: 3rem;
   flex-direction: column;
-  animation: shadow 3s ease-in-out infinite;
+  animation: shadow 3.1s ease-in-out infinite;
 }
 
 .bx {
@@ -76,13 +77,13 @@ h1 {
 
 @keyframes shadow {
   0% {
-    box-shadow: 0px 0px 2px var(--text-color-secondary);
+    box-shadow: 0px 0px 10px 1px var(--text-color-secondary);
   }
   50% {
-    box-shadow: 0px 0px 7px var(--text-color-secondary);
+    box-shadow: 0px 0px 10px 5px var(--text-color-secondary);
   }
   100% {
-    box-shadow: 0px 0px 2px var(--text-color-secondary);
+    box-shadow: 0px 0px 10px 1px var(--text-color-secondary);
   }
 }
 
