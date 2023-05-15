@@ -19,6 +19,7 @@
     <section>
       <form action="./php/login.php" method="post">
         <i class='bx bx-user'></i>
+        <h1>Log in</h1>
         <div class="form-group">
           <label for="usuario">Usuário</label>
           <div class="inp-group">
@@ -32,7 +33,7 @@
             <ion-icon name="eye-outline" id="togglePassword"></ion-icon>
             <input type="password" name="dssenha" id="senha" />
           </div>
-
+          <ion-icon class="lock" name="lock-closed-outline"></ion-icon>
           <input type="submit" value="Acessar" class="btn" />
         </div>
     

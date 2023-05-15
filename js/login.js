@@ -8,10 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     root.classList.add("light");
   }
   if (url.includes("erro")) {
+    document.querySelectorAll(".icon").forEach((icon) => {
+      icon.classList.add("shake-horizontal");
+    });
     document.querySelectorAll("input").forEach((inp) => {
       inp.classList.add("shake-horizontal");
     });
     setTimeout(() => {
+      document.querySelectorAll(".icon").forEach((icon) => {
+        icon.classList.remove("shake-horizontal");
+      });
       document.querySelectorAll("input").forEach((inp) => {
         inp.classList.remove("shake-horizontal");
       });
