@@ -9,7 +9,7 @@ Nesse projeto, além de aprender sobre php, pude colocar em prática e aprender 
 ## Autores
 
 - [Lucas Mello](https://www.github.com/lucas-mmello)
-- [João Marcos](https://www.github.com/progjaao)
+- [João Marcos](https://www.github.com/progjaoo)
 
 ## Video
 
