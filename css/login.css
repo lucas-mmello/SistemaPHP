@@ -9,6 +9,7 @@
   --bg-gradient: linear-gradient(to right, #1c1c1c, #1a6d54);
   --bg-transparent: #1c1c1c5b;
   --button-gradient: linear-gradient(to right, #34ac66, #3af086);
+  --icon-color: #ffffff;
 }
 
 :root.light {
@@ -22,6 +23,7 @@
   --bg-gradient: linear-gradient(to right, #ffffff, #45b9f0);
   --bg-transparent: #ffffff45;
   --button-gradient: linear-gradient(to right, #55a7e6, #0769ab);
+  --icon-color: #1c1c1c;
 }
 
 * {
@@ -132,6 +134,10 @@ form .form-group {
   transform: translateY(40%);
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+ion-icon {
+  color: var(--icon-color);
 }
 
 .lock {
