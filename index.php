@@ -12,27 +12,30 @@
     <link rel="icon" type="image/png" sizes="512x512" href="./images/android-chrome-512x512.png">
     <link rel="shortcut icon" type="image/x-icon"  href="./images/favicon.ico">
     <link rel="manifest" href="./images/site.webmanifest">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Administração de Curso</title>
   </head>
   <body>
-    <section class="title-container">
-      <div class="title">
-        <h1>Administração de Curso</h1>
-      </div>
-    </section>
-
     <section>
       <form action="./php/login.php" method="post">
+        <i class='bx bx-user'></i>
         <div class="form-group">
           <label for="usuario">Usuário</label>
-          <input type="text" name="dslogin" id="usuario" />
-
+          <div class="inp-group">
+            <ion-icon name="person-circle-outline" class="icon"></ion-icon>
+            <input type="text" name="dslogin" id="usuario" />
+          </div>
+          
           <label for="senha">Senha</label>
-          <ion-icon name="eye-outline" id="togglePassword"></ion-icon>
-          <input type="password" name="dssenha" id="senha" />
+          <div class="inp-group">
+            <ion-icon name="key-outline" class="icon"></ion-icon>
+            <ion-icon name="eye-outline" id="togglePassword"></ion-icon>
+            <input type="password" name="dssenha" id="senha" />
+          </div>
+
           <input type="submit" value="Acessar" class="btn" />
         </div>
-        
+    
       </form>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

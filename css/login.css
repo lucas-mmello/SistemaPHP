@@ -6,7 +6,8 @@
   --main-color: #2ecc71; /* um tom de verde brilhante para a cor principal */
   --second-color: #27ae60; /* um tom mais claro de verde para uma cor secundária */
   --error-color: #f03621;
-  --bg-gradient: linear-gradient(to right, #232526, #2e3e50);
+  --bg-gradient: linear-gradient(to right, #1c1c1c, #1a6d54);
+  --bg-transparent: #1c1c1c5b;
 }
 
 :root.light {
@@ -17,7 +18,8 @@
   --main-color: #007acc; /* um tom de azul brilhante para a cor principal */
   --second-color: #55a7e6; /* um tom mais claro de azul para uma cor secundária */
   --error-color: #ff6347;
-  --bg-gradient: linear-gradient(to right, #ffffff, #83a1d8);
+  --bg-gradient: linear-gradient(to right, #ffffff, #45b9f0);
+  --bg-transparent: #ffffff45;
 }
 
 * {
@@ -31,7 +33,7 @@
 body {
   color: var(--bg-color);
   min-height: 100vh;
-  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
 }
 
 section {
@@ -39,46 +41,28 @@ section {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.title-container {
-  background-color: var(--second-bg-color);
-}
-
-.title {
-  margin: 4rem auto;
-}
-.title h1 {
-  font-size: 3rem;
-  animation: title 3s ease-in-out infinite;
-}
-
-@keyframes title {
-  0% {
-    transform: translateY(0);
-    filter: drop-shadow(0px 0px 1px var(--text-color-secondary));
-  }
-  50% {
-    transform: translateY(-0.5rem);
-    filter: drop-shadow(0px 0px 5px var(--text-color-secondary));
-  }
-  100% {
-    transform: translateY(0);
-    filter: drop-shadow(0px 0px 1px var(--text-color-secondary));
-  }
+  height: 100vh;
 }
 
 form {
-  background-image: var(--bg-gradient);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  margin: 1rem auto;
+  width: 500px;
+  background: var();
+  margin: auto auto;
   border: 1px solid black;
   padding: 3rem;
   flex-direction: column;
   animation: shadow 3s ease-in-out infinite;
+}
+
+.bx {
+  padding: 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  margin: 1rem auto;
 }
 
 @keyframes shadow {
@@ -94,7 +78,7 @@ form {
 }
 
 form .form-group {
-  width: 90%;
+  width: 100%;
   position: relative;
   padding: 1rem;
 }
@@ -103,29 +87,52 @@ form .form-group {
   font-size: 1.5rem;
 }
 
-.form-group input {
-  width: 100%;
+.inp-group {
+  display: flex;
+  justify-content: start;
+}
+
+.form-group .inp-group input {
+  width: 300px;
   height: 40px;
   border: none;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   margin-bottom: 1.5rem;
   background-color: var(--main-color);
-  box-shadow: 0px 0px 5px var(--second-color);
+  box-shadow: -1px 0px 5px -1px var(--second-color);
   color: var(--bg-color);
+}
+
+.icon {
+  padding: calc((40px - 16px) / 2);
+  background-color: var(--main-color);
+  box-shadow: -1px 0px 5px -1px var(--second-color);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin: 0;
 }
 
 #togglePassword {
   position: absolute;
-  top: 49%;
-  right: 1.2em;
+  top: 54%;
+  right: 55px;
   transform: translateY(40%);
   font-size: 1.3rem;
   cursor: pointer;
 }
 
 .btn {
+  display: block;
   cursor: pointer;
   font-size: 1.3rem;
+  width: 340px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 5px var(--second-color);
+  color: var(--bg-color);
 }
 
 .btn:hover,
@@ -136,9 +143,7 @@ form .form-group {
   outline: none;
 }
 
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
+.form-group .inp-group input:-webkit-autofill {
   -webkit-text-fill-color: var(--bg-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--second-color) inset;
 }
@@ -210,72 +215,58 @@ select:-webkit-autofill {
 }
 
 @media (max-width: 790px) {
-  .title h1 {
-    font-size: 2.6rem;
-  }
   form {
-    padding: 2rem;
+    width: 350px;
   }
-  form .form-group {
-    width: 90%;
-    position: relative;
+
+  .bx {
+    font-size: 1.6rem;
   }
+
   .form-group label {
     font-size: 1.2rem;
   }
-  .form-group input {
-    height: 30px;
+
+  .form-group .inp-group input {
+    width: 250px;
   }
+
   #togglePassword {
-    transform: translateY(30%);
-    font-size: 1.1rem;
-    cursor: pointer;
+    font-size: 1.2rem;
+    top: 53%;
+    right: 25px;
   }
   .btn {
-    cursor: pointer;
+    width: 220px;
     font-size: 1rem;
   }
 }
 
-@media (max-width: 530px) {
-  .title h1 {
-    font-size: 2rem;
-  }
+@media (max-width: 500px) {
   form {
-    width: 65%;
+    width: 270px;
     padding: 1.5rem;
   }
-  form .form-group {
-    width: 70%;
-    position: relative;
+
+  .bx {
+    font-size: 1.3rem;
   }
+
   .form-group label {
     font-size: 1rem;
   }
-  .form-group input {
-    width: 100%;
-    height: 30px;
+
+  .form-group .inp-group input {
+    width: 200px;
   }
+
   #togglePassword {
-    right: 1.5em;
-    transform: translateY(20%);
-    font-size: 0.9rem;
-    cursor: pointer;
+    font-size: 1.2rem;
+    top: 51%;
+    right: 25px;
   }
   .btn {
-    cursor: pointer;
+    width: 190px;
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 370px) {
-  .title h1 {
-    font-size: 1.6rem;
-  }
-  .form-group label {
-    font-size: 0.95rem;
-  }
-  form .form-group {
-    width: 100%;
   }
 }

@@ -7,8 +7,8 @@
   --second-color: #27ae60; /* um tom mais claro de verde para uma cor secundária */
   --bg-gradient: linear-gradient(
     to bottom,
-    #232526,
-    #2e3e50
+    #1c1c1c,
+    #125b44
   ); /* um gradiente para usar na sidebar*/
   --bg-gradient-smooth: linear-gradient(
     to bottom,
