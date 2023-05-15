@@ -52,6 +52,7 @@ form {
   background: var();
   margin: auto auto;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 3rem;
   flex-direction: column;
   animation: shadow 3s ease-in-out infinite;
