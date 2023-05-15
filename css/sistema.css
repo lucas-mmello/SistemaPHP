@@ -216,6 +216,11 @@ h1 span.multiple-text {
   -moz-text-fill-color: transparent;
 }
 
+p.small {
+  display: none;
+  text-align: center;
+}
+
 table {
   margin: 2px auto;
   border: 2px solid var(--text-color-secondary);
@@ -385,6 +390,12 @@ input::placeholder {
     font-size: 1.3rem;
     margin: 1rem 0;
     text-decoration: none;
+  }
+  p.large {
+    display: none;
+  }
+  p.small {
+    display: block;
   }
 }
 

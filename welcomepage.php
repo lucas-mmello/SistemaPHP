@@ -14,7 +14,8 @@ revalidarLogin();
             <h1 ><span class="multiple-text"></span></h1>
         </div>
         
-        <p class="center">Escolha uma opção no menu a esquerda</p>
+        <p class="center large">Escolha uma opção no menu à esquerda</p>
+        <p class="center small">Escolha uma opção no menu na parte superior esquerda</p>
         <div class="img">
             <img src="./images/welcome.gif" class="welcome">
         </div>
