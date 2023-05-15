@@ -333,12 +333,13 @@ ion-icon {
 
   .lock {
     left: 60px;
-    top: 75%;
-    font-size: 1.2rem;
+    top: 78%;
+    font-size: 1rem;
   }
 
   .btn {
     width: 190px;
     font-size: 1rem;
+    height: 32px;
   }
 }
