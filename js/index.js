@@ -1,5 +1,5 @@
 const root = document.documentElement;
-
+//altera o tema
 const themeToggle = document.querySelectorAll(".theme-toggle");
 
 themeToggle.forEach((themeToggle) => {
