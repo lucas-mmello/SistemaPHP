@@ -1,18 +1,4 @@
-// tema selecionado
-(function () {
-  const theme = localStorage.getItem("theme");
-  const root = document.documentElement;
-  const content = document.getElementById("content");
-
-  if (theme === "light") {
-    root.classList.add("light");
-  }
-
-  content.classList.remove("hidden");
-})();
-
 //erro
-const root = document.documentElement;
 const url = window.location.href;
 
 document.addEventListener("DOMContentLoaded", () => {
