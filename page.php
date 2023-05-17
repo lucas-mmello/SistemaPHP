@@ -1,5 +1,5 @@
 
-  <body>
+  <body id="content" class="hidden">
     <!-- Menu lateral -->
     <div class="sidebar">
       <ion-icon id="sidebar-toggle" name="chevron-back-outline"></ion-icon>

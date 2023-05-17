@@ -13,9 +13,10 @@
     <link rel="shortcut icon" type="image/x-icon"  href="./images/favicon.ico">
     <link rel="manifest" href="./images/site.webmanifest">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./js/login.js" defer></script>
     <title>Administração de Curso</title>
   </head>
-  <body>
+  <body id="content" class="hidden">
     <section>
       <form action="./php/login.php" method="post">
         <i class='bx bx-user'></i>
@@ -41,6 +42,5 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./js/login.js"></script>
   </body>
 </html>

@@ -41,6 +41,10 @@ background-image: linear-gradient(to bottom, #333333, #38536b, #007d97, #00a79a,
 background-image: linear-gradient(to bottom, #f2f2f2, #d0d0e8, #a6b0de, #7294d5, #007acc);
 */
 
+.hidden {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;

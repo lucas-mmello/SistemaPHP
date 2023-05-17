@@ -1,16 +1,4 @@
-// tema selecionado
 const root = document.documentElement;
-document.addEventListener("DOMContentLoaded", () => {
-  const theme = localStorage.getItem("theme");
-  const side = localStorage.getItem("sidebar");
-  if (theme === "light") {
-    root.classList.add("light");
-  }
-  if (side === "small") {
-    sidebar.classList.add("collapsed");
-  }
-});
-// Altera os temas claro e escuro e as imagens
 
 const themeToggle = document.querySelectorAll(".theme-toggle");
 

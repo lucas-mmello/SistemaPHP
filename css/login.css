@@ -26,6 +26,10 @@
   --icon-color: #1c1c1c;
 }
 
+.hidden {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
