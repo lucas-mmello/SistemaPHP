@@ -58,7 +58,7 @@ background-image: linear-gradient(to bottom, #f2f2f2, #d0d0e8, #a6b0de, #7294d5,
 }
 
 ::-webkit-scrollbar {
-  width: 0.6rem;
+  width: 0.4rem;
   background: var(--bg-color);
 }
 
@@ -68,7 +68,7 @@ background-image: linear-gradient(to bottom, #f2f2f2, #d0d0e8, #a6b0de, #7294d5,
 }
 
 html {
-  scrollbar-width: 0.6rem;
+  scrollbar-width: 0.4rem;
   scrollbar-color: var(--main-color) var(--bg-color);
 }
 
