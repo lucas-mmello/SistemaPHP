@@ -142,7 +142,7 @@ body {
 }
 
 .sidebar.collapsed {
-  width: 7%;
+  width: 6%;
 }
 
 .sidebar.collapsed > #sidebar-toggle {
@@ -192,8 +192,8 @@ body {
 }
 
 .sidebar.collapsed ~ .main {
-  margin-left: 7%;
-  width: calc(100% - 7%);
+  margin-left: 6%;
+  width: calc(100% - 6%);
 }
 
 .main {
@@ -349,9 +349,15 @@ input::placeholder {
   font-size: 1rem;
 }
 
+@media (max-width: 1230px) {
+  .sidebar .nav-link {
+    padding: 1rem 1.3rem;
+  }
+}
+
 @media (max-width: 1180px) {
   .sidebar .nav-link {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .sidebar.collapsed .nav-link {
     margin: 0.3rem 1rem 0.3rem 0;
