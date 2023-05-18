@@ -54,12 +54,12 @@ background-image: linear-gradient(to bottom, #f2f2f2, #d0d0e8, #a6b0de, #7294d5,
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--bg-color);
+  background-color: var(--second-bg-color);
 }
 
 ::-webkit-scrollbar {
   width: 0.4rem;
-  background: var(--bg-color);
+  background: var(--second-bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -69,7 +69,7 @@ background-image: linear-gradient(to bottom, #f2f2f2, #d0d0e8, #a6b0de, #7294d5,
 
 html {
   scrollbar-width: 0.4rem;
-  scrollbar-color: var(--main-color) var(--bg-color);
+  scrollbar-color: var(--main-color) var(--second-bg-color);
 }
 
 body {
@@ -138,7 +138,7 @@ body {
 }
 
 .sidebar nav a > .ion {
-  display: none;
+  display: inline-flex;
 }
 
 .sidebar.collapsed {
@@ -183,6 +183,67 @@ body {
   border-radius: 1rem;
   text-shadow: 0 0 1rem var(--main-color);
   color: var(--main-color);
+}
+
+.sidebar .user {
+  width: auto;
+  padding: 0.5rem;
+  margin: 30% 60% 0.3rem 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 1px solid var(--second-bg-color);
+  border-radius: 1rem;
+  background-color: var(--bg-gradient-smooth);
+}
+
+.sidebar.collapsed .user {
+  margin: 70% 15% 0.3rem 0;
+}
+
+.sidebar .user:hover {
+  border: 1px solid var(--second-bg-color);
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+}
+
+.sidebar .user .person {
+  font-size: 3rem;
+}
+
+.div-user {
+  display: none;
+  position: absolute;
+  top: 70%;
+  left: 20%; /* ajuste o valor conforme necessário */
+  font-size: 1.2rem;
+  background: var(--second-color);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.div-user p {
+  margin: 1rem;
+}
+
+.div-user a {
+  margin: 1rem;
+}
+
+.div-user p:hover,
+.div-user a:hover {
+  text-shadow: 0 0 1rem var(--text-color);
+}
+
+.div-user a:hover {
+  cursor: pointer;
+}
+
+.sidebar.collapsed ~ .div-user {
+  left: 6%;
+}
+
+.div-user.show {
+  display: block;
 }
 
 #menu-icon {
@@ -353,6 +414,9 @@ input::placeholder {
   .sidebar .nav-link {
     padding: 1rem 1.3rem;
   }
+  .sidebar .user .person {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -362,10 +426,16 @@ input::placeholder {
   .sidebar.collapsed .nav-link {
     margin: 0.3rem 1rem 0.3rem 0;
   }
+  .sidebar .user .person {
+    font-size: 2.1rem;
+  }
 }
 
 @media (max-width: 900px) {
   .sidebar {
+    display: none;
+  }
+  .div-user.show {
     display: none;
   }
   .header {

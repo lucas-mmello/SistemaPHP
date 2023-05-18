@@ -18,7 +18,7 @@ class TratamentoDeInput
 
 class ValidarSenha extends TratamentoDeInput
 {
-    public function ValidarSenha($valor)
+    public function validarSenha($valor)
     {
         if(!parent::caracterInvalido($valor))
         {
@@ -29,7 +29,7 @@ class ValidarSenha extends TratamentoDeInput
 }
 
 $validarSenhOBJ = new ValidarSenha();
-var_dump($validarSenhOBJ->ValidarSenha('123456'));
+var_dump($validarSenhOBJ->validarSenha('123456'));
 
 
 

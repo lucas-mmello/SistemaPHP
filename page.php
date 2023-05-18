@@ -11,8 +11,14 @@
         <a href="form_disciplina.php" class="nav-link"><ion-icon class="ion" name="book-outline"></ion-icon><span>Administração de materias</span></a>
         <a href="form_nota.php" class="nav-link"><ion-icon class="ion" name="ribbon-outline"></ion-icon><span>Lançamento de Notas</span></a>
         <a href="" class="nav-link"><ion-icon class="ion" name="document-text-outline"></ion-icon><span>Relatório de notas</span></a>
-        <a href="proc.sessiondestroy.php" class="nav-link"><ion-icon class="ion" name="log-out-outline"></ion-icon><span>Sair</span></a>
+        <span class="user">
+          <ion-icon class="person" name="person-circle-outline"></ion-icon>
+        </span>
       </nav>
+    </div>
+    <div class="div-user">
+            <p><?php echo 'Usuário: '. $_SESSION['login']; ?></p>
+            <a href="proc.sessiondestroy.php" class="sair">Sair</a>
     </div>
     <header class="header">
       

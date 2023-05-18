@@ -65,3 +65,10 @@ document.querySelectorAll(".togglePassword").forEach((toggle) => {
     }
   });
 });
+
+//user
+const user = document.querySelector("span.user");
+
+user.addEventListener("click", () => {
+  document.querySelector(".div-user").classList.toggle("show");
+});

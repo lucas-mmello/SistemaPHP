@@ -6,7 +6,7 @@ class ValidacaoDeFormulario extends TratamentoDeInput
     const _MAXNOME = 20;
     const _MINNOME = 10;
 
-    public function ValidarNome($nome) 
+    public function validarNome($nome) 
     {
         if(!parent::caracterInvalido($nome))
         {
@@ -22,4 +22,4 @@ class ValidacaoDeFormulario extends TratamentoDeInput
     } */
 }
 $validar = new ValidacaoDeFormulario();
-var_dump($validar->ValidarNome("Joao"));
+var_dump($validar->validarNome("Joao"));
