@@ -213,7 +213,7 @@ body {
 
 .div-user {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 70%;
   left: 20%; /* ajuste o valor conforme necessário */
   font-size: 1.2rem;
