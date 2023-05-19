@@ -13,11 +13,11 @@ else{
   header('location:../index.php?erro' . validar_nome($_POST['dslogin']));
 }
 
-if(validar_nome($_POST['dssenha']) == 'ok'){
+if(validar_senha($_POST['dssenha']) == 'ok'){
   $senha = md5($_POST['dssenha']);
 }
 else{
-  header('location:../index.php?erro' . validar_nome($_POST['dssenha']));
+  header('location:../index.php?erro' . validar_senha($_POST['dssenha']));
 }
 
 /* mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
