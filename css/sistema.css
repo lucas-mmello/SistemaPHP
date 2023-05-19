@@ -368,6 +368,11 @@ tr:nth-child(odd) td {
   transform: scale(1.2);
 }
 
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+}
+
 .btn:hover {
   box-shadow: none;
 }
