@@ -204,6 +204,7 @@ body {
   border: 1px solid var(--second-bg-color);
   background-color: var(--bg-color);
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .sidebar .user .person {
