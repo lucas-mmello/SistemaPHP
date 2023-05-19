@@ -27,6 +27,7 @@
         id="menu-icon"
       ></i>
       <nav class="nav">
+        <p><?php echo 'Usuário: '. $_SESSION['login']; ?></p>
         <a href="" class="theme-toggle" class="nav-link">Mudar Tema</a>
         <a href="welcomepage.php" class="nav-link">Página Inicial</a>
         <a href="form_aluno.php" class="nav-link">Administração de alunos</a>
