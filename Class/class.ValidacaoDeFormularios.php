@@ -4,6 +4,7 @@ require_once('class.TratamentoDeInput.php');
 class ValidacaoDeFormulario extends TratamentoDeInput
 {
     const _MAXNOME = 10;
+    const _MINNOME = 5;
     const _MINSENHA = 5;
     const _MAXEMAIL = 300;
 
@@ -11,6 +12,7 @@ class ValidacaoDeFormulario extends TratamentoDeInput
     {
         if(!parent::caracterInvalido($nome))
         {
+            if(strlen($nome) > self::_MAXNOME) return false;
             if(strlen($nome) > self::_MAXNOME) return false;
         }
         
