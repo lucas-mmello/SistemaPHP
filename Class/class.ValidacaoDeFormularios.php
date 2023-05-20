@@ -5,6 +5,7 @@ class ValidacaoDeFormulario extends TratamentoDeInput
 {
     const _MAXNOME = 10;
     const _MINSENHA = 5;
+    const _MAXEMAIL = 300;
 
     public function validarNome($nome) 
     {
@@ -20,6 +21,16 @@ class ValidacaoDeFormulario extends TratamentoDeInput
         if(!parent::caracterInvalido($senha))
         {
             if(strlen($senha) < self::_MINSENHA) return false;
+        }
+        
+        return true;
+    } 
+    public function ValidarEmail($email)
+    {
+        if(!parent::caracterInvalido($email))
+        {
+            if(strlen($email) < self::_MAXEMAIL) return false;
+            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) return false;
         }
         
         return true;
