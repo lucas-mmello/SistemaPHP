@@ -13,7 +13,7 @@ class ValidacaoDeFormulario extends TratamentoDeInput
         if(!parent::caracterInvalido($nome))
         {
             if(strlen($nome) > self::_MAXNOME) return false;
-            if(strlen($nome) > self::_MAXNOME) return false;
+            if(strlen($nome) < self::_MINNOME) return false;
         }
         
         return true;
