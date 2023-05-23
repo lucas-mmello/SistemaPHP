@@ -7,13 +7,12 @@
   if (theme === "light") {
     root.classList.add("light");
   }
-
-  if (!window.location.href.includes("index.php")) {
+  alert("aqui1");
+  if (window.location.href.includes("index.php") === false) {
     const side = localStorage.getItem("sidebar");
     if (side === "small") {
       document.querySelector(".sidebar").classList.add("collapsed");
     }
   }
-
   content.classList.remove("hidden");
 })();
