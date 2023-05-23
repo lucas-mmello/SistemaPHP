@@ -19,7 +19,7 @@
   --text-color-secondary: #555555; /* um tom de cinza mais claro para o texto secundário */
   --main-color: #007acc; /* um tom de azul brilhante para a cor principal */
   --second-color: #55a7e6; /* um tom mais claro de azul para uma cor secundária */
-  --error-color: #ff6347;
+  --error-color: #e60000;
   --bg-gradient: linear-gradient(to right, #ffffff, #45b9f0);
   --bg-transparent: #ffffff45;
   --button-gradient: linear-gradient(to right, #55a7e6, #0769ab);
