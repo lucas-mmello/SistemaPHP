@@ -18,6 +18,6 @@ class BancoDeDados{
     $this->banco = $banco;
   }
   public function conectar(){
-    $con = mysqli_connect($this->host, $this->usuario, $this->senha) or die('Erro na conexão');
+    $this->conexao = mysqli_connect($this->host, $this->usuario, $this->senha) or die('Erro na conexão');
   }
 }
