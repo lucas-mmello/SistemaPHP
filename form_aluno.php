@@ -60,16 +60,16 @@ revalidarLogin();
             if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                 echo "Comandos para alterar o aluno ";
                 alterarAluno($_POST['idaluno'], $_POST['nmAluno']);
-                header("location:form_aluno.php?comando=alteracaook");
+                echo "<script> window.location.href = 'form_aluno.php'; </script>";
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                 echo "Comandos para excluir o aluno";
                 excluirAluno($_POST['idaluno']);
-                header("location:form_aluno.php?comando=excluirok");
+                echo "<script> window.location.href = 'form_aluno.php'; </script>";
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Incluir') {
                 echo "Comandos para incluir o aluno";
                 if (trim($_POST['nmAluno']) != '') {
                     incluirAluno(htmlspecialchars($_POST['nmAluno']));
-                    header("location:form_aluno.php?comando=incluirok");
+                    echo "<script> window.location.href = 'form_aluno.php'; </script>";
                 }
             }
 

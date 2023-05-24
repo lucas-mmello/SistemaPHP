@@ -108,7 +108,7 @@ revalidarLogin();
                     $idaluno = $_POST['idaluno'];
                     if (trim($_POST['dslogin']) != '') {
                         incluirLogin($dslogin, $dssenha, $idaluno);
-                        header("location:form_login.php?comando=incluirok");
+                        echo "<script> window.location.href = 'form_login.php'; </script>";
                     }
                 }
                 ?>
