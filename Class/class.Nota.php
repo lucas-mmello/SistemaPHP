@@ -5,13 +5,13 @@ class Nota extends BancoDeDados{
   
   public function listarAvaliacoes()
   {
-    $arrayNota = $this->retornaArray('FROM avaliacao av LEFT OUTER JOIN aluno a ON av.idaluno = a.idaluno LEFT OUTER JOIN disciplina d ON av.iddisciplina = d.iddisciplina');
+    $arrayNota = $this->retornaArray('select * FROM avaliacao av LEFT OUTER JOIN aluno a ON av.idaluno = a.idaluno LEFT OUTER JOIN disciplina d ON av.iddisciplina = d.iddisciplina');
     return $arrayNota;
   }
 
   public function listarAvaliacao($idavaliacao)
   {
-    $arrayNota = $this->retornaArray('FROM avaliacao av LEFT JOIN aluno al ON av.idaluno = al.idaluno WHERE av.idavaliacao=' . $idavaliacao);
+    $arrayNota = $this->retornaArray('select * FROM avaliacao av LEFT JOIN aluno al ON av.idaluno = al.idaluno WHERE av.idavaliacao=' . $idavaliacao);
     return $arrayNota;
   }
 
