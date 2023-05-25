@@ -190,7 +190,7 @@ function alterarAluno($idaluno, $nmaluno)
     global $user, $password, $database, $hostname;
 
     $sqlUpdate = "update aluno
-                     set nmaluno = '@nmaluno'
+                     set nmAluno = '@nmaluno'
                    where idaluno = @idaluno";
 
     $sql = str_replace("@idaluno", $idaluno, $sqlUpdate);
@@ -232,7 +232,7 @@ function incluirAluno($nmaluno)
 {
     global $user, $password, $database, $hostname;
 
-    $sqlInsert = "insert into aluno(nmaluno) values ('@nmaluno')";
+    $sqlInsert = "insert into aluno(nmAluno) values ('@nmaluno')";
 
     $sql = str_replace("@nmaluno", $nmaluno, $sqlInsert);
 
