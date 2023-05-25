@@ -75,8 +75,7 @@ $db = new Disciplina();
                 }
             }
 
-            // dumpF($_GET);
-            // dumpF($_POST);
+           
             
             ?>
         </div>

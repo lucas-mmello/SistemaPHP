@@ -75,8 +75,7 @@ $db = new Aluno();
                 }
             }
 
-            // dumpF($_GET);
-            // dumpF($_POST);
+            
             
             ?>
         </div>

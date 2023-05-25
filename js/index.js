@@ -42,15 +42,6 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
-// //prevent default
-
-// let navlink = document.querySelectorAll(".nav-link");
-
-// navlink.forEach((navlink) => {
-//   navlink.addEventListener("click", (e) => {
-//     e.preventDefault();
-//   });
-// });
 
 // olho da senha
 document.querySelectorAll(".togglePassword").forEach((toggle) => {

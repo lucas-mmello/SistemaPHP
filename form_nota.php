@@ -69,50 +69,19 @@ $dbDisc = new Disciplina();
 
                 }
 
-                // if(isset($_POST['comando']) && ($_POST['comando'] == "Cadastrar"))
-                // {
-                //     echo "blablabla insira o codigo aq";
-                //     $dslogin = htmlspecialchars($_POST['dslogin']);
-                //     $dssenha = md5($_POST['dssenha']);
-                //     $idaluno = $_POST['idaluno'];
-
-                //     if(incluirLogin($dslogin, $dssenha, $idaluno))
-                //     {
-                //         header("location:form_login.php?comando=incluirok");
-                //     }
-
-                // }else if(isset($_POST['comando']) && ($_POST['comando'] == "ExcluirAcesso"))
-                // {
-                //     // echo "Estou na area de exclusão";
-                //     excluirAcesso($_POST['dslogin']);
-                //     header("location:form_login.php?comando=excluirok");
-                // }
-                // else if(isset($_POST['comando']) && ($_POST['comando'] == "AlterarSenha"))
-                // {
-                //     // echo "Estou na area de alteração";
-                //     alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
-                //     header("location:form_login.php?comando=alteracaorok");
-                // }
-                    
 
                 if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
-                    //echo "Comandos para alterar o login ";
                     $db->alterarNota($_POST['idavaliacao'],$_POST['nota']);
                     echo "<script> window.location.href = 'form_nota.php'; </script>";
-                    //header("location:form_login.php?comando=alteracaorok");
                 } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
-                    //echo "Comandos para excluir o login";
                     $db->excluirNota($_POST['idavaliacao']);
                     echo "<script> window.location.href = 'form_nota.php'; </script>";
-                    //header("location:form_login.php?comando=exclusaorok");
                 } else if (isset($_POST['comando']) && $_POST['comando'] == 'Cadastrar') {
-                    //echo "Comandos para incluir o login";
                     $nota = $_POST['nota'];
                     $idaluno = $_POST['idaluno'];
                     $iddisciplina = $_POST['iddisciplina'];
                     $db->incluirNota($nota, $idaluno, $iddisciplina);
                         echo "<script> window.location.href = 'form_nota.php'; </script>";
-                        //header("location:form_nota.php?comando=incluirok");
                 }
                 ?>
             </div>

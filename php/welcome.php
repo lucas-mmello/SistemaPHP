@@ -7,7 +7,7 @@ $_SESSION = array();
 session_start();
 
 
-//session_destroy();
+
 $token = md5($_SERVER["REMOTE_ADDR"] . $_SERVER['HTTP_USER_AGENT']);
 
 session_name($token);
@@ -30,14 +30,4 @@ if ($_SESSION["token"] != $token){
 }
 
 Echo "Aqui";
-    // session_start();
-// var_dump($_POST);
-
-// $_SESSION["valor"] = "valor20";
-// var_dump($_SESSION);
-// if(isset($_POST["usuario"]))
-// {
-//     $_SESSION["usuario"] = $_POST["usuario"];
-// }
-// var_dump($_SESSION);
 ?>
