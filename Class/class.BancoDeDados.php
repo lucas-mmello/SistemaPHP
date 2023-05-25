@@ -53,27 +53,7 @@ class BancoDeDados {
         return $rows;
     }
 
-    // public function retornaResultado()
-    // {
-    //   $rows = mysqli_fetch_all($this-> resultado, MYSQLI_ASSOC);
-
-    //   return $rows;
-    // }
+   
 
 }
 
-//echo "Aqui";
-
-
-// function dumpF($string)
-// {
-//     echo "<pre>";
-//     var_dump($string);
-//     echo "</pre>";
-// }
-
-// $dbTeste = new BancoDeDados();
-
-// dumpF($dbTeste);
-// $recebe = $dbTeste->retornaArray('select * from aluno');
-// dumpF($recebe);
