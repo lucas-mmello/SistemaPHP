@@ -2,30 +2,30 @@
 require_once('class.BancoDeDados.php');
 class Aluno extends BancoDeDados{
   
-  public function ListarAlunos()
+  public function listarAlunos()
   {
     $arrayAluno = $this->retornaArray('select * from aluno');
     return $arrayAluno;
   }
 
-  public function ListarAluno($idaluno)
+  public function listarAluno($idaluno)
   {
     $arrayAluno = $this->retornaArray('select * from aluno where idaluno=' . $idaluno);
     return $arrayAluno;
   }
 
-  public function AlterarAluno($idaluno, $nmaluno)
+  public function alterarAluno($idaluno, $nmaluno)
   {
-    $this->executarConsulta('update aluno set nmAluno=' . $nmaluno . ' where idaluno=' . $idaluno);
+    $this->executarConsulta('update aluno set nmAluno="' . $nmaluno . '" where idaluno=' . $idaluno);
   }
 
-  public function ExcluirAluno($idaluno)
+  public function excluirAluno($idaluno)
   {
     $this->executarConsulta('delete from aluno where idaluno=' . $idaluno);
   }
 
-  public function IncluirAluno($nmaluno)
+  public function incluirAluno($nmaluno)
   {
-    $this->executarConsulta('insert into aluno(nmAluno) values (' . $nmaluno . ')');
+    $this->executarConsulta('insert into aluno(nmAluno) values ("' . $nmaluno . '")');
   }
 }

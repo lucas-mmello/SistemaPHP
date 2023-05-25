@@ -3,13 +3,13 @@
 require_once('class.BancoDeDados.php');
 class Disciplina extends BancoDeDados{
   
-  public function ListarDisciplinas()
+  public function listarDisciplinas()
   {
     $arrayDisciplina = $this->retornaArray('select * from disciplina');
     return $arrayDisciplina;
   }
 
-  public function ListarDisciplina($iddisciplina)
+  public function listarDisciplina($iddisciplina)
   {
     $arrayDisciplina = $this->retornaArray('select * from disciplina where iddisciplina=' . $iddisciplina);
     return $arrayDisciplina;
@@ -17,16 +17,16 @@ class Disciplina extends BancoDeDados{
 
   public function alterarDisciplina($iddisciplina, $dsdisciplina)
   {
-    $this->executarConsulta('update disciplina set dsdisciplina=' . $dsdisciplina . ' where idaluno=' . $iddisciplina);
+    $this->executarConsulta('update disciplina set dsdisciplina="' . $dsdisciplina . '" where idaluno=' . $iddisciplina);
   }
 
-  public function ExcluirDisciplina($iddisciplina)
+  public function excluirDisciplina($iddisciplina)
   {
     $this->executarConsulta('delete from disciplina where iddisciplina=' . $iddisciplina);
   }
 
-  public function IncluirDisciplina($dsdisciplina)
+  public function incluirDisciplina($dsdisciplina)
   {
-    $this->executarConsulta('insert into disciplina(dsdisciplina) values (' . $dsdisciplina . ')');
+    $this->executarConsulta('insert into disciplina(dsdisciplina) values ("' . $dsdisciplina . '")');
   }
 }
