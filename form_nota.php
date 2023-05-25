@@ -2,6 +2,12 @@
 require_once("./php/funcao.php");
 require_once("./header.php");
 revalidarLogin();
+require_once("./class/class.Nota.php");
+require_once("./class/class.Aluno.php");
+require_once("./class/class.Disciplina.php");
+$db = new Nota();
+$dbAluno = new Aluno();
+$dbDisc = new Disciplina();
 ?>
 <body>
 <?php require_once("page.php") ?>
@@ -21,7 +27,7 @@ revalidarLogin();
                     </tr>
                     <?php 
                     
-                    $registros = listarAvaliacoes();
+                    $registros = $db->listarAvaliacoes();
 
                     foreach($registros as $linha)
                     {
@@ -40,7 +46,7 @@ revalidarLogin();
                 <div class="center">
                 <?php
                   if (isset($_GET['alterar'])) {
-                  $avaliacao = listarAvaliacao($_GET['alterar']);
+                  $avaliacao = $db->listarAvaliacao($_GET['alterar']);
                 ?>
                     <h3>Alterar e Excluir</h3>
                     <div>
@@ -91,12 +97,12 @@ revalidarLogin();
 
                 if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                     //echo "Comandos para alterar o login ";
-                    alterarNota($_POST['idavaliacao'],$_POST['nota']);
+                    $db->alterarNota($_POST['idavaliacao'],$_POST['nota']);
                     echo "<script> window.location.href = 'form_nota.php'; </script>";
                     //header("location:form_login.php?comando=alteracaorok");
                 } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                     //echo "Comandos para excluir o login";
-                    excluirNota($_POST['idavaliacao']);
+                    $db->excluirNota($_POST['idavaliacao']);
                     echo "<script> window.location.href = 'form_nota.php'; </script>";
                     //header("location:form_login.php?comando=exclusaorok");
                 } else if (isset($_POST['comando']) && $_POST['comando'] == 'Cadastrar') {
@@ -104,7 +110,7 @@ revalidarLogin();
                     $nota = $_POST['nota'];
                     $idaluno = $_POST['idaluno'];
                     $iddisciplina = $_POST['iddisciplina'];
-                        incluirNota($nota, $idaluno, $iddisciplina);
+                    $db->incluirNota($nota, $idaluno, $iddisciplina);
                         echo "<script> window.location.href = 'form_nota.php'; </script>";
                         //header("location:form_nota.php?comando=incluirok");
                 }
@@ -121,7 +127,7 @@ revalidarLogin();
                             <div class="inp-group">
                                 <select name="idaluno" class="input" id="">
                                     <?php
-                                        $registros = listarAlunos();
+                                        $registros = $dbAluno->listarAlunos();
 
                                         foreach($registros as $linha){
                                             echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
@@ -132,7 +138,7 @@ revalidarLogin();
                             <div class="inp-group">
                                 <select name="iddisciplina" class="input" id="">
                                     <?php
-                                        $registros = listarDisciplinas();
+                                        $registros = $dbDisc->listarDisciplinas();
 
                                         foreach($registros as $linha){
                                             echo "<option value='" . $linha['iddisciplina'] . "'>" . $linha['dsdisciplina'] . "</option>";

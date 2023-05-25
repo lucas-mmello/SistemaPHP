@@ -2,6 +2,8 @@
 require_once("./php/funcao.php");
 require_once("./header.php");
 revalidarLogin();
+require_once("./class/class.Disciplina.php");
+$db = new Disciplina();
 ?>
 
 <body>
@@ -22,7 +24,7 @@ revalidarLogin();
 
                 <?php
 
-                $rows = listarDisciplinas();
+                $rows = $db->listarDisciplinas();
                 
                 foreach ($rows as $registro) {
                     echo "<tr>";
@@ -36,7 +38,7 @@ revalidarLogin();
         <div class="center">
             <?php
             if (isset($_GET['alterarid'])) {
-                $disciplina = listarDisciplina($_GET['alterarid']);
+                $disciplina = $db->listarDisciplina($_GET['alterarid']);
             ?>
             <h3>Alterar e Excluir Materia</h3>
             <div>
@@ -59,16 +61,16 @@ revalidarLogin();
             
             if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                 echo "Comandos para alterar a disciplina";
-                alterarDisciplina($_POST['iddisciplina'], $_POST['dsdisciplina']);
+                $db->alterarDisciplina($_POST['iddisciplina'], $_POST['dsdisciplina']);
                 echo "<script> window.location.href = 'form_disciplina.php'; </script>";
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                 echo "Comandos para excluir a disciplina";
-                excluirDisciplina($_POST['iddisciplina']);
+                $db->excluirDisciplina($_POST['iddisciplina']);
                 echo "<script> window.location.href = 'form_disciplina.php'; </script>";
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Incluir') {
                 echo "Comandos para incluir a disciplina";
                 if (trim($_POST['dsdisciplina']) != '') {
-                    incluirDisciplina(htmlspecialchars($_POST['dsdisciplina']));
+                    $db->incluirDisciplina(htmlspecialchars($_POST['dsdisciplina']));
                     echo "<script> window.location.href = 'form_disciplina.php'; </script>";
                 }
             }

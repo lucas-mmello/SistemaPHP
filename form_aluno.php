@@ -2,6 +2,8 @@
 require_once("./php/funcao.php");
 require_once("./header.php");
 revalidarLogin();
+require_once("./class/class.Aluno.php");
+$db = new Aluno();
 ?>
 
 <body>
@@ -22,7 +24,7 @@ revalidarLogin();
 
                 <?php
 
-                $rows = listarAlunos();
+                $rows = $db->listarAlunos();
                 
                 foreach ($rows as $registro) {
                     echo "<tr>";
@@ -36,7 +38,7 @@ revalidarLogin();
         <div class="center">
             <?php
             if (isset($_GET['alterarid'])) {
-                $aluno = listarAluno($_GET['alterarid']);
+                $aluno = $db->listarAluno($_GET['alterarid']);
             ?>
             <h3>Alterar e Excluir Aluno</h3>
             <div>
@@ -59,16 +61,16 @@ revalidarLogin();
             
             if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                 echo "Comandos para alterar o aluno ";
-                alterarAluno($_POST['idaluno'], $_POST['nmAluno']);
+                $db->alterarAluno($_POST['idaluno'], $_POST['nmAluno']);
                 echo "<script> window.location.href = 'form_aluno.php'; </script>";
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                 echo "Comandos para excluir o aluno";
-                excluirAluno($_POST['idaluno']);
+                $db->excluirAluno($_POST['idaluno']);
                 echo "<script> window.location.href = 'form_aluno.php'; </script>";
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Incluir') {
                 echo "Comandos para incluir o aluno";
                 if (trim($_POST['nmAluno']) != '') {
-                    incluirAluno(htmlspecialchars($_POST['nmAluno']));
+                    $db->incluirAluno(htmlspecialchars($_POST['nmAluno']));
                     echo "<script> window.location.href = 'form_aluno.php'; </script>";
                 }
             }

@@ -22,7 +22,11 @@ class Disciplina extends BancoDeDados{
 
   public function excluirDisciplina($iddisciplina)
   {
-    $this->executarConsulta('delete from disciplina where iddisciplina=' . $iddisciplina);
+    try {
+      $this->executarConsulta('delete from disciplina where iddisciplina=' . $iddisciplina);
+    } catch (Exception $e) {
+      echo '<script>alert("Disciplina não excluída, uma vez que já possui notas lançadas.");</script>';
+    }
   }
 
   public function incluirDisciplina($dsdisciplina)

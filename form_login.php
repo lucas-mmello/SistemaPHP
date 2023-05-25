@@ -2,6 +2,8 @@
 require_once("./php/funcao.php");
 require_once("./header.php");
 revalidarLogin();
+require_once("./class/class.Login.php");
+$db = new Login();
 ?>
 <body>
 <?php require_once("page.php") ?>
@@ -19,7 +21,7 @@ revalidarLogin();
                     </tr>
                     <?php 
                     
-                    $registros = listarLogins();
+                    $registros = $db->listarLogins();
 
                     foreach($registros as $linha)
                     {
@@ -93,12 +95,12 @@ revalidarLogin();
 
                 if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                     //echo "Comandos para alterar o login ";
-                    alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
+                    $db->alterarAcesso($_POST['dslogin'], md5($_POST['dssenha']));
                     echo "<script> window.location.href = 'form_login.php'; </script>";
                     //header("location:form_login.php?comando=alteracaorok");
                 } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                     //echo "Comandos para excluir o login";
-                    excluirAcesso($_POST['dslogin']);
+                    $db->excluirAcesso($_POST['dslogin']);
                     echo "<script> window.location.href = 'form_login.php'; </script>";
                     //header("location:form_login.php?comando=exclusaorok");
                 } else if (isset($_POST['comando']) && $_POST['comando'] == 'Cadastrar') {
@@ -107,7 +109,7 @@ revalidarLogin();
                     $dssenha = md5($_POST['dssenha']);
                     $idaluno = $_POST['idaluno'];
                     if (trim($_POST['dslogin']) != '') {
-                        incluirLogin($dslogin, $dssenha, $idaluno);
+                        $db->incluirLogin($dslogin, $dssenha, $idaluno);
                         echo "<script> window.location.href = 'form_login.php'; </script>";
                     }
                 }
@@ -128,7 +130,7 @@ revalidarLogin();
                             <div class="inp-group">
                                 <select name="idaluno" class="input" id="">
                                     <?php
-                                        $registros = listarAlunosNaoRelacionados();
+                                        $registros = $db->listarAlunosNaoRelacionados();
 
                                         foreach($registros as $linha){
                                             echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
