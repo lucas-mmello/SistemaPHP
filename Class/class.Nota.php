@@ -17,7 +17,7 @@ class Nota extends BancoDeDados{
 
   public function alterarNota($idavaliacao, $nota)
   {
-    $this->executarConsulta('update avaliacao set nota =' . $nota . ' where idavaliacao="' . $idavaliacao .'"');
+    $this->executarConsulta('update avaliacao set nota =' . $nota . ' where idavaliacao=' . $idavaliacao);
   }
 
   public function excluirNota($idavaliacao)
