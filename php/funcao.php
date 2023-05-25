@@ -539,7 +539,7 @@ function alterarNota($idavaliacao, $nota)
     global $user, $password, $database, $hostname;
 
     $sqlUpdate = "update avaliacao
-                     set nota = '@nota'
+                     set nota = @nota
                    where idavaliacao = @idavaliacao";
 
     $sql = str_replace("@idavaliacao", $idavaliacao, $sqlUpdate);
