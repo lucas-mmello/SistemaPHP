@@ -28,10 +28,3 @@ class ValidarSenha extends TratamentoDeInput
     }
 }
 
-$validarSenhOBJ = new ValidarSenha();
-var_dump($validarSenhOBJ->validarSenha('123456'));
-
-
-
- /*    $itemDeTeste = new TratamentoDeInput();
-    var_dump($itemDeTeste->caracterInvalido('"')); */

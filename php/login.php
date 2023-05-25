@@ -4,49 +4,27 @@ if(!isset($_POST['dslogin']) || !isset($_POST['dssenha'])){
   header('location:../index.php');
 }
 
-require_once('funcao.php');
+require_once('../class/class.ValidacaoDeFormularios.php');
+require_once('../class/class.Login.php');
+$logar = new Login();
+$valida = new ValidacaoDeFormulario;
 
-if(validar_nome($_POST['dslogin']) == 'ok'){
+if($valida->validarNome($_POST['dslogin']) == 'ok'){
   $login = $_POST['dslogin'];
 }
 else{
-  header('location:../index.php?erro' . validar_nome($_POST['dslogin']));
+  header('location:../index.php?erro' . $valida->validarNome($_POST['dslogin']));
 }
 
-if(validar_senha($_POST['dssenha']) == 'ok'){
+if($valida->ValidarSenha($_POST['dssenha']) == 'ok'){
   $senha = md5($_POST['dssenha']);
 }
 else{
-  header('location:../index.php?erro' . validar_senha($_POST['dssenha']));
+  header('location:../index.php?erro' . $valida->ValidarSenha($_POST['dssenha']));
 }
 
-/* mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-      $user = 'root';
-      $password = '';
-      $database = 'aedb_quinto';
-
-      $hostname ='localhost';
-
-      $sqlLogin = " SELECT * " . 
-            " FROM login l " . 
-            " WHERE l.dslogin = '@nome' " . 
-            " and l.dssenha = '@senha'";
-
-$sql = str_replace('@nome', $login, $sqlLogin);
-$sql = str_replace('@senha', $senha, $sql);
-
-$con = mysqli_connect($hostname, $user, $password) or die('Erro na conexão');
-if(mysqli_connect_errno()) trigger_error(mysqli_connect_error());
-
-mysqli_select_db($con, $database) or die('Erro na conexão');
-
-$resultado = mysqli_query($con, $sql);
-$registros = mysqli_num_rows($resultado);
-
-echo "<br/> Registros: $registros"; */
-
-if(validarLogin($login, $senha))
+if($logar->validarLogin($login, $senha))
 {
     echo "<br /> login: $login,senha: $senha, ip: " . $_SERVER['REMOTE_ADDR'] .",browser: " . $_SERVER['HTTP_USER_AGENT'];
     $token = md5($_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']);
@@ -59,10 +37,6 @@ if(validarLogin($login, $senha))
     $_SESSION['senha'] = $senha;
     
     $_SESSION['token'] = $token;
-
-    // echo "<pre>";
-    // var_dump($_SESSION);
-    // echo "</pre>";
 
     header("location:../welcomepage.php");
 }

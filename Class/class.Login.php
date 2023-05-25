@@ -29,4 +29,11 @@ class Login extends BancoDeDados{
   {
     $this->executarConsulta('insert into login(dslogin,dssenha,idaluno) values ("' . $dslogin .'", "' . $dssenha .'", "' . $idaluno . '")');
   }
+  public function validarLogin($login, $senha)
+  {
+    $arrayLogin = $this->executarConsulta('select * FROM login l WHERE l.dslogin ="' . $login .'" and l.dssenha ="' . $senha . '"');
+    $resultado = mysqli_num_rows($arrayLogin);
+    if ($resultado == 1) return true;
+    return false;
+  }
 }

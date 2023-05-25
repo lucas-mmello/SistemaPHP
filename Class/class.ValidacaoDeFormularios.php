@@ -12,29 +12,29 @@ class ValidacaoDeFormulario extends TratamentoDeInput
     {
         if(!parent::caracterInvalido($nome))
         {
-            if(strlen($nome) > self::_MAXNOME) return false;
-            if(strlen($nome) < self::_MINNOME) return false;
+            if(strlen($nome) > self::_MAXNOME) return "não";
+            if(strlen($nome) < self::_MINNOME) return "não";
         }
         
-        return true;
+        return "ok";
     }
      public function ValidarSenha($senha)
     {
         if(!parent::caracterInvalido($senha))
         {
-            if(strlen($senha) < self::_MINSENHA) return false;
+            if(strlen($senha) < self::_MINSENHA) return "não";
         }
         
-        return true;
+        return "ok";
     } 
     public function ValidarEmail($email)
     {
         if(!parent::caracterInvalido($email))
         {
-            if(strlen($email) < self::_MAXEMAIL) return false;
-            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) return false;
+            if(strlen($email) < self::_MAXEMAIL) return "não";
+            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) return "não";
         }
         
-        return true;
+        return "ok";
     } 
 }
