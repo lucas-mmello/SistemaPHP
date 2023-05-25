@@ -32,4 +32,5 @@ class Aluno extends BancoDeDados{
   {
     $this->executarConsulta('insert into aluno(nmAluno) values ("' . $nmaluno . '")');
   }
+  //TESTE
 }
