@@ -29,6 +29,9 @@
             else{
             
             $html = '<html><head><style>
+            *{
+                font-family: Arial, Helvetica, sans-serif;
+            }
               h1{
                 text-align: center;
                 margin-bottom: 2rem;
@@ -72,7 +75,6 @@
 
             $dompdf = new Dompdf();
             $dompdf->loadHtml($html);
-            $dompdf->set_option('defaultFont', 'Arial');
             
             $dompdf->render();
             
