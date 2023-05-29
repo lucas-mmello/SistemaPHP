@@ -11,8 +11,8 @@
     ?>
     <div class="content">
         <div class="center">
-            <h2>Relatório de Notas</h2>
-            <form action="class/class.Relatorio.php" method="post">
+            <h2><span class="multiple-text"></span></h2>
+            <form action="class/class.Relatorio.php" method="post" target="_blank">
                 <div class="inp-group">
                     <select name="idaluno" class="input" id="">
                         <?php
@@ -32,4 +32,18 @@
         </div>
     </div>
 <?php require_once("footer.php") ?>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const element = document.querySelector(".multiple-text");
+            if (element) {
+                const typed = new window.Typed(element, {
+                    strings: ["Relatório de Notas"],
+                    typeSpeed: 100,
+                    backSpeed: 100,
+                    backDelay: 5000,
+                    loop: false,
+                });
+            }
+        });
+    </script>
 </body>
