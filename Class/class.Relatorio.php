@@ -58,7 +58,7 @@
 
             $html .= '<h1>Relatório de Notas</h1>';
             $html .= '<table>';
-            $html .= '<tr><th>ID Avaliação</th><th>ID Aluno</th><th>ID Disciplina</th><th>Nota</th><th>Nome Aluno</th><th>Nome Disciplina</th></tr>';
+            $html .= '<tr><th>Código Avaliação</th><th>Código Aluno</th><th>Código Disciplina</th><th>Nota</th><th>Nome do Aluno</th><th>Nome da Disciplina</th></tr>';
             
             foreach ($arrayNotas as $nota) {
                 $html .= '<tr>';
