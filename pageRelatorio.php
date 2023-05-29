@@ -5,8 +5,6 @@
     revalidarLogin();
     $dbAluno = new Aluno();
 ?>
-
-
 <body>
     <?php
     require_once("page.php");
@@ -32,8 +30,6 @@
                 <img src="./images/animacao.gif" class="animacao">
             </div>
         </div>
-        
     </div>
-
 <?php require_once("footer.php") ?>
 </body>
