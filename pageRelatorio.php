@@ -14,7 +14,7 @@
     <div class="content">
         <div class="center">
             <h2><span class="multiple-text"></span></h2>
-            <form action="class/class.Relatorio.php" method="post">
+            <form action="class/class.Relatorio.php" method="post" target="_blank">
                 <div class="inp-group">
                     <select name="idaluno" class="input" id="">
                         <?php
