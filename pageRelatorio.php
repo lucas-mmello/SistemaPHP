@@ -28,6 +28,9 @@
                 </div>
                 <input type="submit" value="Gerar Relatório" name="submit" class="btn" id='relatorio'>
             </form>
+            <div class="img anim">
+                <img src="./images/animacao.gif" class="animacao">
+            </div>
         </div>
         
     </div>
