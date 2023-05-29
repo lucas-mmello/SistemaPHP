@@ -357,6 +357,10 @@ tr:nth-child(odd) td {
   text-align: center;
 }
 
+#relatorio {
+  width: 200px;
+}
+
 .togglePassword {
   position: absolute;
   margin-top: 25px;

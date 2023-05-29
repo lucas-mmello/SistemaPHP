@@ -34,7 +34,7 @@
         <a href="form_login.php" class="nav-link">Administração de logins</a>
         <a href="form_disciplina.php" class="nav-link">Administração de materias</a>
         <a href="form_nota.php" class="nav-link">Lançamento de Notas</a>
-        <a href="" class="nav-link">Relatório de notas</a>
+        <a href="pageRelatorio.php" class="nav-link">Relatório de notas</a>
         <a href="proc.sessiondestroy.php" class="nav-link">Sair</a>
       </nav>
     </header>

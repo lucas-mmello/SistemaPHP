@@ -1,22 +1,37 @@
 <?php 
     require_once("./header.php");
     require_once("./php/funcao.php");
+    require_once("./class/class.Aluno.php");
     revalidarLogin();
+    $dbAluno = new Aluno();
 ?>
-<html>
-<head>
-    <title>Relatório de Notas</title>
-</head>
+
+
 <body>
     <?php
     require_once("page.php");
     ?>
     <div class="content">
-    <h1>Relatório de Notas</h1>
-    <form action="Class/class.Relatorio.php" method="post">
-        <input type="submit" value="Gerar Relatório" name="submit">
-    </form>
+        <div class="center">
+            <h2>Relatório de Notas</h2>
+            <form action="class/class.Relatorio.php" method="post">
+                <div class="inp-group">
+                    <select name="idaluno" class="input" id="">
+                        <?php
+                            $registros = $dbAluno->listarAlunos();
+
+                            foreach($registros as $linha){
+                                echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmAluno'] . "</option>";
+                            }
+                        ?>
+                     </select>
+                </div>
+                <input type="submit" value="Gerar Relatório" name="submit" class="btn" id='relatorio'>
+            </form>
+        </div>
+        
     </div>
-</body>
+
 <?php require_once("footer.php") ?>
-</html>
+
+</body>
