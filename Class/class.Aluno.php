@@ -21,7 +21,8 @@ class Aluno extends BancoDeDados{
 
   public function excluirAluno($idaluno)
   {
-    try {
+    try 
+    {
       $this->executarConsulta('delete from aluno where idaluno=' . $idaluno);
     } catch (Exception $e) {
       echo '<script>alert("Aluno não excluído, uma vez que já possui notas lançadas.");</script>';

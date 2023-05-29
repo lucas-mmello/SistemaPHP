@@ -1,5 +1,5 @@
 
-  <body id="content" class="hidden">
+<body id="content" class="hidden">
     <!-- Menu lateral -->
     <div class="sidebar">
       <ion-icon id="sidebar-toggle" name="chevron-back-outline"></ion-icon>
@@ -10,7 +10,7 @@
         <a href="form_login.php" class="nav-link"><ion-icon class="ion" name="people-outline"></ion-icon><span>Administração de logins</span></a>
         <a href="form_disciplina.php" class="nav-link"><ion-icon class="ion" name="book-outline"></ion-icon><span>Administração de materias</span></a>
         <a href="form_nota.php" class="nav-link"><ion-icon class="ion" name="ribbon-outline"></ion-icon><span>Lançamento de Notas</span></a>
-        <a href="" class="nav-link"><ion-icon class="ion" name="document-text-outline"></ion-icon><span>Relatório de notas</span></a>
+        <a href="pageRelatorio.php" class="nav-link"><ion-icon class="ion" name="document-text-outline"></ion-icon><span>Relatório de notas</span></a>
         <span class="user">
           <ion-icon class="person" name="person-circle-outline"></ion-icon>
         </span>

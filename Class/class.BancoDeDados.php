@@ -45,7 +45,7 @@ class BancoDeDados {
         }
     }
 
-    protected function retornaArray($query)
+    public function retornaArray($query)
     {
         $this->resultado = $this->executarConsulta($query);
         $rows = mysqli_fetch_all($this-> resultado, MYSQLI_ASSOC);
@@ -56,4 +56,3 @@ class BancoDeDados {
    
 
 }
-
