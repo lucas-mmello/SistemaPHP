@@ -76,7 +76,6 @@
             $html .= '</table>';
 
             $dompdf = new Dompdf();
-            $dompdf->
             $dompdf->loadHtml($html);
             
             $dompdf->render();
