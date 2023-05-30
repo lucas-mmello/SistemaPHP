@@ -28,7 +28,9 @@
             }
             else{
             
-            $html = '<html><head><style>
+            $html = '<html><head>
+            <title>Pdf do Relatório</title>
+            <style>
             *{
                 font-family: Arial, Helvetica, sans-serif;
             }
@@ -74,6 +76,7 @@
             $html .= '</table>';
 
             $dompdf = new Dompdf();
+            $dompdf->
             $dompdf->loadHtml($html);
             
             $dompdf->render();
