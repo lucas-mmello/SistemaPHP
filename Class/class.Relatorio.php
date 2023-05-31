@@ -2,6 +2,7 @@
 
     require_once('dompdf/autoload.inc.php');
     require_once('class.BancoDeDados.php');
+    require_once('class.chart.php');
 
     use Dompdf\Dompdf;
 
@@ -74,6 +75,8 @@
             }
             
             $html .= '</table>';
+            $chart = new Chart();
+            $html .= $chart->criar($arrayNotas);
 
             $dompdf = new Dompdf();
             $dompdf->loadHtml($html);
