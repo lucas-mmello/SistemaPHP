@@ -2,6 +2,7 @@
 
     require_once('dompdf/autoload.inc.php');
     require_once('class.BancoDeDados.php');
+    require_once('class.chart.php');
 
     use Dompdf\Dompdf;
 
@@ -28,7 +29,9 @@
             }
             else{
             
-            $html = '<html><head><style>
+            $html = '<html><head>
+            <title>Pdf do Relatório</title>
+            <style>
             *{
                 font-family: Arial, Helvetica, sans-serif;
             }
@@ -72,6 +75,8 @@
             }
             
             $html .= '</table>';
+            $chart = new Chart();
+            $html .= $chart->criar($arrayNotas);
 
             $dompdf = new Dompdf();
             $dompdf->loadHtml($html);
