@@ -5,6 +5,7 @@
     require_once('class.chart.php');
 
     use Dompdf\Dompdf;
+    use Dompdf\Options;
 
     class GeradorRelatorioPDF {
         private $bancoDeDados;
@@ -35,7 +36,7 @@
             *{
                 font-family: Arial, Helvetica, sans-serif;
             }
-              h1{
+              h1,h2{
                 text-align: center;
                 margin-bottom: 2rem;
               }
@@ -57,8 +58,9 @@
               td {
                 background-color: #e6e6e6;
               }
-                    </style></head><body>';
 
+                    </style></head><body>';
+            $html .= '<div style="width:250px height:250px"><img src="../images/logounidombosco.png"></div>';
             $html .= '<h1>Relatório de Notas</h1>';
             $html .= '<table>';
             $html .= '<tr><th>Código Avaliação</th><th>Código Aluno</th><th>Código Disciplina</th><th>Nota</th><th>Nome do Aluno</th><th>Nome da Disciplina</th></tr>';
@@ -75,12 +77,12 @@
             }
             
             $html .= '</table>';
+            $html .= '<h2>Gráfico das Notas</h2>';
             $chart = new Chart();
             $html .= $chart->criar($arrayNotas);
-
+ 
             $dompdf = new Dompdf();
             $dompdf->loadHtml($html);
-            
             $dompdf->render();
             
             $dompdf->stream('relatorio.pdf', ['Attachment' => false]);
