@@ -417,6 +417,12 @@ select {
   border: 0.15rem solid var(--main-color);
 }
 
+select {
+  white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+  overflow: hidden; /* Esconde qualquer conteúdo que exceda o tamanho */
+  text-overflow: ellipsis; /* Exibe reticências (...) quando o texto é truncado */
+}
+
 input:focus {
   box-shadow: none;
   border: 0.15rem solid var(--main-color);
