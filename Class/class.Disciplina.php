@@ -17,7 +17,7 @@ class Disciplina extends BancoDeDados{
 
   public function alterarDisciplina($iddisciplina, $dsdisciplina)
   {
-    $this->executarConsulta('update disciplina set dsdisciplina="' . $dsdisciplina . '" where idaluno=' . $iddisciplina);
+    $this->executarConsulta('update disciplina set dsdisciplina="' . $dsdisciplina . '" where iddisciplina=' . $iddisciplina);
   }
 
   public function excluirDisciplina($iddisciplina)
